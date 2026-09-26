@@ -24,8 +24,8 @@ type IconName =
   | "check"
   | "external";
 const ORIGINAL_URL = import.meta.env.DEV
-  ? "http://127.0.0.1:8000/?mock=0"
-  : "/?mock=0";
+  ? `http://127.0.0.1:8000/?mock=${USE_MOCK ? "1" : "0"}`
+  : `/?mock=${USE_MOCK ? "1" : "0"}`;
 const GUIDE_URL = `${import.meta.env.BASE_URL}dashboard-guide.md`;
 const CATEGORIES = [
   {

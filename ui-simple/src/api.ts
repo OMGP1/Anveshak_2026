@@ -209,17 +209,24 @@ export const IDLE_STATUS: ReplayStatus = {
   alerts: 0,
 };
 
-// the mock engine is opt in: ?mock=1 turns it on, ?mock=0 clears it again
+// A static showcase can opt into mock-by-default at build time; query flags always win.
 export const USE_MOCK = readMockFlag();
 
 function readMockFlag(): boolean {
   const asked = new URLSearchParams(window.location.search).get("mock");
   try {
-    if (asked === "1") localStorage.setItem("ui-simple.mock", "1");
-    if (asked === "0") localStorage.removeItem("ui-simple.mock");
-    return localStorage.getItem("ui-simple.mock") === "1";
+    if (asked === "1") {
+      localStorage.setItem("ui-simple.mock", "1");
+      return true;
+    }
+    if (asked === "0") {
+      localStorage.removeItem("ui-simple.mock");
+      return false;
+    }
+    const stored = localStorage.getItem("ui-simple.mock");
+    return stored === null ? import.meta.env.VITE_DEFAULT_MOCK === "1" : stored === "1";
   } catch {
-    return asked === "1";
+    return asked === null ? import.meta.env.VITE_DEFAULT_MOCK === "1" : asked === "1";
   }
 }
 
