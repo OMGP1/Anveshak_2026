@@ -259,8 +259,10 @@ function post<T>(url: string, body?: unknown): Promise<T> {
   });
 }
 
-// Vite and the production gateway both proxy /ws on the page's own origin.
+// Local and gateway deployments use the page origin; the hosted demo supplies Render's WSS URL.
 function streamUrl(): string {
+  const configured = import.meta.env.VITE_WS_URL?.trim();
+  if (configured) return configured;
   const loc = window.location;
   const proto = loc.protocol === "https:" ? "wss:" : "ws:";
   const host = loc.host;

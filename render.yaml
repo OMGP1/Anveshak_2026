@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: anveshak-2026-api
+    runtime: docker
+    plan: free
+    region: singapore
+    repo: https://github.com/OMGP1/Anveshak_2026.git
+    branch: main
+    autoDeployTrigger: commit
+    dockerfilePath: ./deploy/Dockerfile.api
+    dockerContext: .
+    healthCheckPath: /api/health
+    envVars:
+      - key: SIH_PUBLIC_DEMO
+        value: "1"
+      - key: SIH_API_HOST
+        value: 0.0.0.0
+      - key: SIH_ALLOWED_ORIGINS
+        value: https://anveshak-2026.vercel.app
+      - key: SIH_STATE_DIR
+        value: /tmp/anveshak-state
+      - key: SIH_ENGINE_CONFIG
+        value: /app/config/engine-extended.json

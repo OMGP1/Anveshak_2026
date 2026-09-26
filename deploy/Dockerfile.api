@@ -23,10 +23,12 @@ WORKDIR /app
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 COPY api/ api/
+COPY copilot/ copilot/
 COPY engine/ engine/
 COPY training/ training/
 COPY config/ config/
 COPY data/models/ data/models/
+COPY data/reference/ data/reference/
 COPY data/scenarios/ data/scenarios/
 COPY --from=dashboard /src/dist/ ui/dist/
 COPY --from=simple-dashboard /src/dist/ ui-simple/dist/

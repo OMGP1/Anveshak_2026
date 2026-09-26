@@ -34,6 +34,7 @@ from api.live import MonitoringController
 from engine.sources.live_source import interfaces as capture_interfaces
 
 TITLE = "SIH26145 detection enclave"
+LOCAL_ORIGINS = {"http://localhost:5173", "http://127.0.0.1:5173"}
 
 
 class StartRequest(BaseModel):
@@ -106,6 +107,14 @@ class Hub:
 
 def create_app(db_path: str = DEFAULT_DB, ledger_path: str = DEFAULT_LEDGER) -> FastAPI:
     production = os.environ.get("SIH_PRODUCTION") == "1"
+    public_demo = os.environ.get("SIH_PUBLIC_DEMO") == "1"
+    if production and public_demo:
+        raise ValueError("SIH_PRODUCTION and SIH_PUBLIC_DEMO are mutually exclusive")
+    allowed_origins = LOCAL_ORIGINS | {
+        value.strip().rstrip("/")
+        for value in os.environ.get("SIH_ALLOWED_ORIGINS", "").split(",")
+        if value.strip()
+    }
     gateway_secret = os.environ.get("SIH_GATEWAY_SECRET", "")
     secret_file = os.environ.get("SIH_GATEWAY_SECRET_FILE")
     if secret_file:
@@ -186,7 +195,7 @@ def create_app(db_path: str = DEFAULT_DB, ledger_path: str = DEFAULT_LEDGER) -> 
     app = FastAPI(title=TITLE, lifespan=lifespan)
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+        allow_origins=sorted(allowed_origins),
         allow_methods=["*"],
         allow_headers=["*"],
     )
@@ -220,9 +229,12 @@ def create_app(db_path: str = DEFAULT_DB, ledger_path: str = DEFAULT_LEDGER) -> 
                 if role not in needed:
                     return JSONResponse({"detail": "Role denied"}, status_code=403)
         origin = request.headers.get("origin")
-        if not gateway_secret and request.method not in ("GET", "HEAD", "OPTIONS") and origin:
-            allowed = {str(request.base_url).rstrip("/"), "http://localhost:5173", "http://127.0.0.1:5173"}
-            if origin not in allowed:
+        if public_demo and request.method not in ("GET", "HEAD", "OPTIONS"):
+            if origin not in allowed_origins:
+                return JSONResponse({"detail": "Public demo mutations require an allowed browser origin"},
+                                    status_code=403)
+        elif not gateway_secret and request.method not in ("GET", "HEAD", "OPTIONS") and origin:
+            if origin not in allowed_origins | {str(request.base_url).rstrip("/")}:
                 return JSONResponse({"detail": "Cross-origin mutation refused"}, status_code=403)
         response = await call_next(request)
         response.headers["X-Content-Type-Options"] = "nosniff"
@@ -234,7 +246,9 @@ def create_app(db_path: str = DEFAULT_DB, ledger_path: str = DEFAULT_LEDGER) -> 
     @app.get("/api/health")
     def get_health() -> dict:
         return {"status": "degraded" if getattr(controller, "error", None) else "ok",
-                "deployment": "hardened-single-node" if production else "single-process-local", "production_ready": False,
+                "deployment": ("hardened-single-node" if production else
+                               "public-replay-demo" if public_demo else "single-process-local"),
+                "production_ready": False,
                 "gateway_required": bool(gateway_secret), "signed_models_required": production,
                 "replay_error": getattr(controller, "error", None),
                 "limits": {"websocket_clients": 32, "queue": QUEUE_CAPACITY, "training_workers": 1,
@@ -477,8 +491,7 @@ def create_app(db_path: str = DEFAULT_DB, ledger_path: str = DEFAULT_LEDGER) -> 
             return
         origin = socket.headers.get("origin")
         host = socket.headers.get("host", "")
-        if origin and origin not in {"http://localhost:5173", "http://127.0.0.1:5173",
-                                      "http://" + host, "https://" + host}:
+        if origin and origin not in allowed_origins | {"http://" + host, "https://" + host}:
             await socket.close(code=1008)
             return
         if len(hub.clients) >= 32:
@@ -548,9 +561,11 @@ def main() -> None:
     import uvicorn
 
     host = os.environ.get("SIH_API_HOST", "127.0.0.1")
-    if host not in {"127.0.0.1", "::1"} and os.environ.get("SIH_PRODUCTION") != "1":
-        raise ValueError("Non-loopback API binding requires production mode")
-    uvicorn.run(create_app(), host=host, port=int(os.environ.get("SIH_API_PORT", "8000")), log_level="info", proxy_headers=False,
+    externally_bound = os.environ.get("SIH_PRODUCTION") == "1" or os.environ.get("SIH_PUBLIC_DEMO") == "1"
+    if host not in {"127.0.0.1", "::1"} and not externally_bound:
+        raise ValueError("Non-loopback API binding requires production or public-demo mode")
+    port = int(os.environ.get("SIH_API_PORT", os.environ.get("PORT", "8000")))
+    uvicorn.run(create_app(), host=host, port=port, log_level="info", proxy_headers=False,
                 limit_concurrency=160, timeout_keep_alive=15, ws_max_size=4096, ws_ping_timeout=20)
 
 

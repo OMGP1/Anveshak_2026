@@ -138,6 +138,24 @@ def test_production_requires_trusted_gateway_before_creating_state(tmp_path, mon
     assert not (tmp_path / "db").exists()
 
 
+def test_public_demo_requires_the_configured_browser_origin_for_mutations(tmp_path, monkeypatch):
+    origin = "https://anveshak-2026.vercel.app"
+    monkeypatch.setenv("SIH_PUBLIC_DEMO", "1")
+    monkeypatch.setenv("SIH_ALLOWED_ORIGINS", origin)
+    with TestClient(create_app(str(tmp_path / "db"), str(tmp_path / "ledger.jsonl"))) as client:
+        assert client.get("/api/health").json()["deployment"] == "public-replay-demo"
+        assert client.post("/api/replay/stop").status_code == 403
+        assert client.post("/api/replay/stop", headers={"Origin": "https://example.invalid"}).status_code == 403
+        allowed = client.post("/api/replay/stop", headers={"Origin": origin})
+        assert allowed.status_code == 200
+        preflight = client.options(
+            "/api/replay/start",
+            headers={"Origin": origin, "Access-Control-Request-Method": "POST"},
+        )
+        assert preflight.status_code == 200
+        assert preflight.headers["access-control-allow-origin"] == origin
+
+
 def test_offline_backup_restore_and_corruption(tmp_path):
     state = tmp_path / "state"
     state.mkdir()
