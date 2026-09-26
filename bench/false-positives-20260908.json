@@ -1,0 +1,1122 @@
+{
+  "environment": "Windows-10-10.0.19045-SP0",
+  "arms": {
+    "rules": {
+      "cases": [
+        {
+          "case": "tcp_large_download/seed-20260908",
+          "packets": 4000,
+          "capture_seconds": 9.9975,
+          "wall_seconds": 0.077,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "udp443_large_download/seed-20260908",
+          "packets": 4000,
+          "capture_seconds": 9.9975,
+          "wall_seconds": 0.076,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "dns_mixed_record_types/seed-20260908",
+          "packets": 2000,
+          "capture_seconds": 99.901,
+          "wall_seconds": 0.116,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "dns_txt_other_domain/seed-20260908",
+          "packets": 1000,
+          "capture_seconds": 99.9,
+          "wall_seconds": 0.088,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "dns_long_cdn_names/seed-20260908",
+          "packets": 1000,
+          "capture_seconds": 99.9,
+          "wall_seconds": 0.105,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "browser_connection_burst/seed-20260908",
+          "packets": 2000,
+          "capture_seconds": 39.904,
+          "wall_seconds": 0.08,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "regular_tls_session/seed-20260908",
+          "packets": 200,
+          "capture_seconds": 19.9,
+          "wall_seconds": 0.006,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "regular_udp443_session/seed-20260908",
+          "packets": 200,
+          "capture_seconds": 19.9,
+          "wall_seconds": 0.006,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "tcp_large_download/seed-20260909",
+          "packets": 4000,
+          "capture_seconds": 9.9975,
+          "wall_seconds": 0.073,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "udp443_large_download/seed-20260909",
+          "packets": 4000,
+          "capture_seconds": 9.9975,
+          "wall_seconds": 0.078,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "dns_mixed_record_types/seed-20260909",
+          "packets": 2000,
+          "capture_seconds": 99.901,
+          "wall_seconds": 0.127,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "dns_txt_other_domain/seed-20260909",
+          "packets": 1000,
+          "capture_seconds": 99.9,
+          "wall_seconds": 0.091,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "dns_long_cdn_names/seed-20260909",
+          "packets": 1000,
+          "capture_seconds": 99.9,
+          "wall_seconds": 0.095,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "browser_connection_burst/seed-20260909",
+          "packets": 2000,
+          "capture_seconds": 39.904,
+          "wall_seconds": 0.072,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "regular_tls_session/seed-20260909",
+          "packets": 200,
+          "capture_seconds": 19.9,
+          "wall_seconds": 0.006,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "regular_udp443_session/seed-20260909",
+          "packets": 200,
+          "capture_seconds": 19.9,
+          "wall_seconds": 0.006,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "tcp_large_download/seed-20260910",
+          "packets": 4000,
+          "capture_seconds": 9.9975,
+          "wall_seconds": 0.069,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "udp443_large_download/seed-20260910",
+          "packets": 4000,
+          "capture_seconds": 9.9975,
+          "wall_seconds": 0.071,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "dns_mixed_record_types/seed-20260910",
+          "packets": 2000,
+          "capture_seconds": 99.901,
+          "wall_seconds": 0.12,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "dns_txt_other_domain/seed-20260910",
+          "packets": 1000,
+          "capture_seconds": 99.9,
+          "wall_seconds": 0.085,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "dns_long_cdn_names/seed-20260910",
+          "packets": 1000,
+          "capture_seconds": 99.9,
+          "wall_seconds": 0.092,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "browser_connection_burst/seed-20260910",
+          "packets": 2000,
+          "capture_seconds": 39.904,
+          "wall_seconds": 0.07,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "regular_tls_session/seed-20260910",
+          "packets": 200,
+          "capture_seconds": 19.9,
+          "wall_seconds": 0.006,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "regular_udp443_session/seed-20260910",
+          "packets": 200,
+          "capture_seconds": 19.9,
+          "wall_seconds": 0.006,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "bundled-benign",
+          "packets": 8150,
+          "capture_seconds": 300.952664,
+          "wall_seconds": 0.606,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        }
+      ],
+      "packets": 51350,
+      "false_alerts": 0,
+      "capture_seconds": 1499.1526639999997,
+      "false_alerts_per_capture_hour": 0.0
+    },
+    "serving": {
+      "cases": [
+        {
+          "case": "tcp_large_download/seed-20260908",
+          "packets": 4000,
+          "capture_seconds": 9.9975,
+          "wall_seconds": 0.107,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "udp443_large_download/seed-20260908",
+          "packets": 4000,
+          "capture_seconds": 9.9975,
+          "wall_seconds": 0.104,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "dns_mixed_record_types/seed-20260908",
+          "packets": 2000,
+          "capture_seconds": 99.901,
+          "wall_seconds": 3.051,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "dns_txt_other_domain/seed-20260908",
+          "packets": 1000,
+          "capture_seconds": 99.9,
+          "wall_seconds": 3.542,
+          "false_alerts": 1,
+          "by_class": {
+            "data-exfiltration": 1
+          },
+          "by_source": {
+            "model": 1
+          },
+          "alerts": [
+            {
+              "class": "data-exfiltration",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 1.0,
+              "summary": ""
+            }
+          ]
+        },
+        {
+          "case": "dns_long_cdn_names/seed-20260908",
+          "packets": 1000,
+          "capture_seconds": 99.9,
+          "wall_seconds": 0.839,
+          "false_alerts": 1,
+          "by_class": {
+            "dga-dns-tunnelling": 1
+          },
+          "by_source": {
+            "model": 1
+          },
+          "alerts": [
+            {
+              "class": "dga-dns-tunnelling",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 0.9948,
+              "summary": ""
+            }
+          ]
+        },
+        {
+          "case": "browser_connection_burst/seed-20260908",
+          "packets": 2000,
+          "capture_seconds": 39.904,
+          "wall_seconds": 2.749,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "regular_tls_session/seed-20260908",
+          "packets": 200,
+          "capture_seconds": 19.9,
+          "wall_seconds": 0.142,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "regular_udp443_session/seed-20260908",
+          "packets": 200,
+          "capture_seconds": 19.9,
+          "wall_seconds": 0.171,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "tcp_large_download/seed-20260909",
+          "packets": 4000,
+          "capture_seconds": 9.9975,
+          "wall_seconds": 0.222,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "udp443_large_download/seed-20260909",
+          "packets": 4000,
+          "capture_seconds": 9.9975,
+          "wall_seconds": 0.265,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "dns_mixed_record_types/seed-20260909",
+          "packets": 2000,
+          "capture_seconds": 99.901,
+          "wall_seconds": 7.416,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "dns_txt_other_domain/seed-20260909",
+          "packets": 1000,
+          "capture_seconds": 99.9,
+          "wall_seconds": 5.531,
+          "false_alerts": 1,
+          "by_class": {
+            "data-exfiltration": 1
+          },
+          "by_source": {
+            "model": 1
+          },
+          "alerts": [
+            {
+              "class": "data-exfiltration",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 1.0,
+              "summary": ""
+            }
+          ]
+        },
+        {
+          "case": "dns_long_cdn_names/seed-20260909",
+          "packets": 1000,
+          "capture_seconds": 99.9,
+          "wall_seconds": 0.746,
+          "false_alerts": 1,
+          "by_class": {
+            "dga-dns-tunnelling": 1
+          },
+          "by_source": {
+            "model": 1
+          },
+          "alerts": [
+            {
+              "class": "dga-dns-tunnelling",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 0.9948,
+              "summary": ""
+            }
+          ]
+        },
+        {
+          "case": "browser_connection_burst/seed-20260909",
+          "packets": 2000,
+          "capture_seconds": 39.904,
+          "wall_seconds": 2.477,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "regular_tls_session/seed-20260909",
+          "packets": 200,
+          "capture_seconds": 19.9,
+          "wall_seconds": 0.131,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "regular_udp443_session/seed-20260909",
+          "packets": 200,
+          "capture_seconds": 19.9,
+          "wall_seconds": 0.171,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "tcp_large_download/seed-20260910",
+          "packets": 4000,
+          "capture_seconds": 9.9975,
+          "wall_seconds": 0.204,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "udp443_large_download/seed-20260910",
+          "packets": 4000,
+          "capture_seconds": 9.9975,
+          "wall_seconds": 0.262,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "dns_mixed_record_types/seed-20260910",
+          "packets": 2000,
+          "capture_seconds": 99.901,
+          "wall_seconds": 7.521,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "dns_txt_other_domain/seed-20260910",
+          "packets": 1000,
+          "capture_seconds": 99.9,
+          "wall_seconds": 5.888,
+          "false_alerts": 1,
+          "by_class": {
+            "data-exfiltration": 1
+          },
+          "by_source": {
+            "model": 1
+          },
+          "alerts": [
+            {
+              "class": "data-exfiltration",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 1.0,
+              "summary": ""
+            }
+          ]
+        },
+        {
+          "case": "dns_long_cdn_names/seed-20260910",
+          "packets": 1000,
+          "capture_seconds": 99.9,
+          "wall_seconds": 0.748,
+          "false_alerts": 1,
+          "by_class": {
+            "dga-dns-tunnelling": 1
+          },
+          "by_source": {
+            "model": 1
+          },
+          "alerts": [
+            {
+              "class": "dga-dns-tunnelling",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 0.9948,
+              "summary": ""
+            }
+          ]
+        },
+        {
+          "case": "browser_connection_burst/seed-20260910",
+          "packets": 2000,
+          "capture_seconds": 39.904,
+          "wall_seconds": 2.569,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "regular_tls_session/seed-20260910",
+          "packets": 200,
+          "capture_seconds": 19.9,
+          "wall_seconds": 0.129,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "regular_udp443_session/seed-20260910",
+          "packets": 200,
+          "capture_seconds": 19.9,
+          "wall_seconds": 0.172,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "bundled-benign",
+          "packets": 8150,
+          "capture_seconds": 300.952664,
+          "wall_seconds": 4.067,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        }
+      ],
+      "packets": 51350,
+      "false_alerts": 6,
+      "capture_seconds": 1499.1526639999997,
+      "false_alerts_per_capture_hour": 14.408139023258277
+    },
+    "candidate": {
+      "cases": [
+        {
+          "case": "tcp_large_download/seed-20260908",
+          "packets": 4000,
+          "capture_seconds": 9.9975,
+          "wall_seconds": 0.384,
+          "false_alerts": 1,
+          "by_class": {
+            "volumetric-ddos": 1
+          },
+          "by_source": {
+            "model": 1
+          },
+          "alerts": [
+            {
+              "class": "volumetric-ddos",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 0.9999,
+              "summary": ""
+            }
+          ]
+        },
+        {
+          "case": "udp443_large_download/seed-20260908",
+          "packets": 4000,
+          "capture_seconds": 9.9975,
+          "wall_seconds": 0.391,
+          "false_alerts": 3,
+          "by_class": {
+            "volumetric-ddos": 3
+          },
+          "by_source": {
+            "model": 3
+          },
+          "alerts": [
+            {
+              "class": "volumetric-ddos",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 1.0,
+              "summary": ""
+            },
+            {
+              "class": "volumetric-ddos",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 1.0,
+              "summary": ""
+            },
+            {
+              "class": "volumetric-ddos",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 1.0,
+              "summary": ""
+            }
+          ]
+        },
+        {
+          "case": "dns_mixed_record_types/seed-20260908",
+          "packets": 2000,
+          "capture_seconds": 99.901,
+          "wall_seconds": 28.493,
+          "false_alerts": 2,
+          "by_class": {
+            "encrypted-malware": 1,
+            "volumetric-ddos": 1
+          },
+          "by_source": {
+            "model": 2
+          },
+          "alerts": [
+            {
+              "class": "encrypted-malware",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 1.0,
+              "summary": ""
+            },
+            {
+              "class": "volumetric-ddos",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 1.0,
+              "summary": ""
+            }
+          ]
+        },
+        {
+          "case": "dns_txt_other_domain/seed-20260908",
+          "packets": 1000,
+          "capture_seconds": 99.9,
+          "wall_seconds": 4.1,
+          "false_alerts": 2,
+          "by_class": {
+            "recon-scanning": 1,
+            "volumetric-ddos": 1
+          },
+          "by_source": {
+            "model": 2
+          },
+          "alerts": [
+            {
+              "class": "recon-scanning",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 1.0,
+              "summary": ""
+            },
+            {
+              "class": "volumetric-ddos",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 0.9998,
+              "summary": ""
+            }
+          ]
+        },
+        {
+          "case": "dns_long_cdn_names/seed-20260908",
+          "packets": 1000,
+          "capture_seconds": 99.9,
+          "wall_seconds": 2.074,
+          "false_alerts": 1,
+          "by_class": {
+            "dga-dns-tunnelling": 1
+          },
+          "by_source": {
+            "model": 1
+          },
+          "alerts": [
+            {
+              "class": "dga-dns-tunnelling",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 0.9999,
+              "summary": ""
+            }
+          ]
+        },
+        {
+          "case": "browser_connection_burst/seed-20260908",
+          "packets": 2000,
+          "capture_seconds": 39.904,
+          "wall_seconds": 4.641,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "regular_tls_session/seed-20260908",
+          "packets": 200,
+          "capture_seconds": 19.9,
+          "wall_seconds": 0.053,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "regular_udp443_session/seed-20260908",
+          "packets": 200,
+          "capture_seconds": 19.9,
+          "wall_seconds": 0.279,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "tcp_large_download/seed-20260909",
+          "packets": 4000,
+          "capture_seconds": 9.9975,
+          "wall_seconds": 0.13,
+          "false_alerts": 1,
+          "by_class": {
+            "volumetric-ddos": 1
+          },
+          "by_source": {
+            "model": 1
+          },
+          "alerts": [
+            {
+              "class": "volumetric-ddos",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 0.9999,
+              "summary": ""
+            }
+          ]
+        },
+        {
+          "case": "udp443_large_download/seed-20260909",
+          "packets": 4000,
+          "capture_seconds": 9.9975,
+          "wall_seconds": 0.18,
+          "false_alerts": 3,
+          "by_class": {
+            "volumetric-ddos": 3
+          },
+          "by_source": {
+            "model": 3
+          },
+          "alerts": [
+            {
+              "class": "volumetric-ddos",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 1.0,
+              "summary": ""
+            },
+            {
+              "class": "volumetric-ddos",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 1.0,
+              "summary": ""
+            },
+            {
+              "class": "volumetric-ddos",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 1.0,
+              "summary": ""
+            }
+          ]
+        },
+        {
+          "case": "dns_mixed_record_types/seed-20260909",
+          "packets": 2000,
+          "capture_seconds": 99.901,
+          "wall_seconds": 17.651,
+          "false_alerts": 2,
+          "by_class": {
+            "encrypted-malware": 1,
+            "volumetric-ddos": 1
+          },
+          "by_source": {
+            "model": 2
+          },
+          "alerts": [
+            {
+              "class": "encrypted-malware",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 1.0,
+              "summary": ""
+            },
+            {
+              "class": "volumetric-ddos",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 1.0,
+              "summary": ""
+            }
+          ]
+        },
+        {
+          "case": "dns_txt_other_domain/seed-20260909",
+          "packets": 1000,
+          "capture_seconds": 99.9,
+          "wall_seconds": 2.639,
+          "false_alerts": 2,
+          "by_class": {
+            "recon-scanning": 1,
+            "volumetric-ddos": 1
+          },
+          "by_source": {
+            "model": 2
+          },
+          "alerts": [
+            {
+              "class": "recon-scanning",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 1.0,
+              "summary": ""
+            },
+            {
+              "class": "volumetric-ddos",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 0.9998,
+              "summary": ""
+            }
+          ]
+        },
+        {
+          "case": "dns_long_cdn_names/seed-20260909",
+          "packets": 1000,
+          "capture_seconds": 99.9,
+          "wall_seconds": 1.122,
+          "false_alerts": 1,
+          "by_class": {
+            "dga-dns-tunnelling": 1
+          },
+          "by_source": {
+            "model": 1
+          },
+          "alerts": [
+            {
+              "class": "dga-dns-tunnelling",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 0.9999,
+              "summary": ""
+            }
+          ]
+        },
+        {
+          "case": "browser_connection_burst/seed-20260909",
+          "packets": 2000,
+          "capture_seconds": 39.904,
+          "wall_seconds": 4.184,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "regular_tls_session/seed-20260909",
+          "packets": 200,
+          "capture_seconds": 19.9,
+          "wall_seconds": 0.036,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "regular_udp443_session/seed-20260909",
+          "packets": 200,
+          "capture_seconds": 19.9,
+          "wall_seconds": 0.276,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "tcp_large_download/seed-20260910",
+          "packets": 4000,
+          "capture_seconds": 9.9975,
+          "wall_seconds": 0.129,
+          "false_alerts": 1,
+          "by_class": {
+            "volumetric-ddos": 1
+          },
+          "by_source": {
+            "model": 1
+          },
+          "alerts": [
+            {
+              "class": "volumetric-ddos",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 0.9999,
+              "summary": ""
+            }
+          ]
+        },
+        {
+          "case": "udp443_large_download/seed-20260910",
+          "packets": 4000,
+          "capture_seconds": 9.9975,
+          "wall_seconds": 0.339,
+          "false_alerts": 3,
+          "by_class": {
+            "volumetric-ddos": 3
+          },
+          "by_source": {
+            "model": 3
+          },
+          "alerts": [
+            {
+              "class": "volumetric-ddos",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 1.0,
+              "summary": ""
+            },
+            {
+              "class": "volumetric-ddos",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 1.0,
+              "summary": ""
+            },
+            {
+              "class": "volumetric-ddos",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 1.0,
+              "summary": ""
+            }
+          ]
+        },
+        {
+          "case": "dns_mixed_record_types/seed-20260910",
+          "packets": 2000,
+          "capture_seconds": 99.901,
+          "wall_seconds": 15.772,
+          "false_alerts": 2,
+          "by_class": {
+            "encrypted-malware": 1,
+            "volumetric-ddos": 1
+          },
+          "by_source": {
+            "model": 2
+          },
+          "alerts": [
+            {
+              "class": "encrypted-malware",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 1.0,
+              "summary": ""
+            },
+            {
+              "class": "volumetric-ddos",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 1.0,
+              "summary": ""
+            }
+          ]
+        },
+        {
+          "case": "dns_txt_other_domain/seed-20260910",
+          "packets": 1000,
+          "capture_seconds": 99.9,
+          "wall_seconds": 2.398,
+          "false_alerts": 2,
+          "by_class": {
+            "recon-scanning": 1,
+            "volumetric-ddos": 1
+          },
+          "by_source": {
+            "model": 2
+          },
+          "alerts": [
+            {
+              "class": "recon-scanning",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 1.0,
+              "summary": ""
+            },
+            {
+              "class": "volumetric-ddos",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 0.9998,
+              "summary": ""
+            }
+          ]
+        },
+        {
+          "case": "dns_long_cdn_names/seed-20260910",
+          "packets": 1000,
+          "capture_seconds": 99.9,
+          "wall_seconds": 1.276,
+          "false_alerts": 1,
+          "by_class": {
+            "dga-dns-tunnelling": 1
+          },
+          "by_source": {
+            "model": 1
+          },
+          "alerts": [
+            {
+              "class": "dga-dns-tunnelling",
+              "subtype": "model-only",
+              "source": "model",
+              "confidence": 0.9999,
+              "summary": ""
+            }
+          ]
+        },
+        {
+          "case": "browser_connection_burst/seed-20260910",
+          "packets": 2000,
+          "capture_seconds": 39.904,
+          "wall_seconds": 3.899,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "regular_tls_session/seed-20260910",
+          "packets": 200,
+          "capture_seconds": 19.9,
+          "wall_seconds": 0.029,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "regular_udp443_session/seed-20260910",
+          "packets": 200,
+          "capture_seconds": 19.9,
+          "wall_seconds": 0.213,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        },
+        {
+          "case": "bundled-benign",
+          "packets": 8150,
+          "capture_seconds": 300.952664,
+          "wall_seconds": 1.863,
+          "false_alerts": 0,
+          "by_class": {},
+          "by_source": {},
+          "alerts": []
+        }
+      ],
+      "packets": 51350,
+      "false_alerts": 27,
+      "capture_seconds": 1499.1526639999997,
+      "false_alerts_per_capture_hour": 64.83662560466225
+    }
+  },
+  "scope": "Offline synthetic metadata challenges plus the bundled synthetic benign PCAP. Challenge cases were not used for fitting, selection or calibration. Seeds diversify some cases; deterministic cases repeat. These are not independent real-world trials."
+}

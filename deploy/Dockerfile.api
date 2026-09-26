@@ -1,0 +1,36 @@
+FROM rust:1-bookworm AS native
+WORKDIR /src
+COPY native/pcap-audit/ ./
+RUN cargo build --release --offline
+
+FROM node:22-bookworm-slim AS dashboard
+WORKDIR /src
+COPY ui/package.json ui/package-lock.json ./
+RUN npm ci
+COPY ui/ ./
+RUN npm run build
+
+FROM node:22-bookworm-slim AS simple-dashboard
+WORKDIR /src
+COPY ui-simple/package.json ui-simple/package-lock.json ./
+RUN npm ci
+COPY ui-simple/ ./
+RUN npm run build
+
+FROM python:3.13-slim-bookworm
+RUN apt-get update && apt-get install -y --no-install-recommends libgomp1 && rm -rf /var/lib/apt/lists/*
+WORKDIR /app
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+COPY api/ api/
+COPY engine/ engine/
+COPY training/ training/
+COPY config/ config/
+COPY data/models/ data/models/
+COPY data/scenarios/ data/scenarios/
+COPY --from=dashboard /src/dist/ ui/dist/
+COPY --from=simple-dashboard /src/dist/ ui-simple/dist/
+COPY --from=native /src/target/release/pcap-audit native/pcap-audit/target/release/pcap-audit
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 MKL_NUM_THREADS=2 MPLCONFIGDIR=/tmp/matplotlib
+USER 10001:10001
+CMD ["python", "-m", "api.main"]

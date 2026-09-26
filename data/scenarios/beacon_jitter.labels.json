@@ -1,0 +1,72 @@
+{
+  "attackers": [
+    "10.20.1.14",
+    "10.20.1.19",
+    "10.20.2.11",
+    "10.20.2.18",
+    "10.20.3.13",
+    "10.20.4.10"
+  ],
+  "attacks": [
+    {
+      "attackers": [
+        "10.20.1.14",
+        "10.20.1.19",
+        "10.20.2.11",
+        "10.20.2.18",
+        "10.20.3.13",
+        "10.20.4.10"
+      ],
+      "benign_decoys": {
+        "destination": "10.20.0.80",
+        "hosts": [
+          "10.20.1.10",
+          "10.20.2.13",
+          "10.20.4.11"
+        ],
+        "jitter_fraction": 0.45,
+        "note": "software update pollers, semi-regular on purpose, must not raise an alert",
+        "period_s": 300.0
+      },
+      "end_offset_s": 3580.0,
+      "end_ts": 1788778780.0,
+      "expected_signal": "lomb-scargle peak at 45 s with low false-alarm probability",
+      "jitter_fraction": 0.3,
+      "period_s": 45.0,
+      "protocol": "tcp",
+      "start_offset_s": 30.0,
+      "start_ts": 1788775230.0,
+      "subtype": "jittered-https-beacon",
+      "threat_class": "c2-beaconing",
+      "victim_ports": [
+        443
+      ],
+      "victims": [
+        "203.0.113.77"
+      ]
+    }
+  ],
+  "benign_only": false,
+  "capture": {
+    "base_ts": 1788775200.0,
+    "bytes": 3461275,
+    "duration_s": 3585.77872,
+    "first_ts": 1788775207.624075,
+    "flow_records": 1870,
+    "last_ts": 1788778793.402795,
+    "packets": 11150
+  },
+  "emulates": "http/tls c2 check-in every 45 s with plus or minus 30 percent jitter",
+  "generated_by": "training/generate_scenarios.py",
+  "internal_prefix": "10.20.0.0/16",
+  "name": "Jittered C2 beacon",
+  "scenario": "beacon_jitter",
+  "seed": 26145005,
+  "stands_in_for": "a sandboxed c2 emulator such as a Cobalt Strike sleep+jitter profile",
+  "synthesis_note": "every pcap in data/scenarios was synthesised packet by packet with dpkt.pcap.Writer by training/generate_scenarios.py. no attack tool was run to produce them and none is needed to regenerate them. the tools named below are what each scenario emulates, not what made it.",
+  "synthesised": true,
+  "threat_class": "c2-beaconing",
+  "victims": [
+    "203.0.113.77"
+  ]
+}

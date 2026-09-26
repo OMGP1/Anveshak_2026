@@ -1,0 +1,21 @@
+{
+ "version": "1.0.0",
+ "origin": "written by hand. these are the destination shapes that are legitimately outbound-heavy in an enclave and would otherwise dominate the exfiltration false positive rate. it is a starting list and is meant to be replaced with the site's own inventory",
+ "match": "a destination is allowlisted when its address falls inside the cidr and, if ports are listed, the destination port is one of them. an empty ports list matches any port",
+ "entries": [
+  {"cidr": "10.20.0.0/16", "ports": [445, 873, 3260, 9000, 5000],
+   "reason": "internal backup, rsync, iscsi and object store targets inside the monitored enclave"},
+  {"cidr": "10.20.0.80/32", "ports": [],
+   "reason": "software update and patch distribution server, upload heavy during telemetry reporting"},
+  {"cidr": "172.16.0.0/12", "ports": [445, 873, 3260],
+   "reason": "rfc1918 backup targets on the secondary management range"},
+  {"cidr": "192.168.0.0/16", "ports": [445, 873, 3260],
+   "reason": "rfc1918 backup targets on the lab range"},
+  {"cidr": "224.0.0.0/4", "ports": [],
+   "reason": "multicast, no reverse direction exists so the ratio is meaningless"},
+  {"cidr": "255.255.255.255/32", "ports": [],
+   "reason": "broadcast, no reverse direction exists"}
+ ],
+ "suppression_policy": "a match suppresses the exfiltration alert only. the flow is still counted, the suppression is recorded against the matching entry, and the counts are reported in the coverage endpoint. nothing is dropped silently",
+ "honesty_note": "an allowlist is an attack surface. an adversary who can route exfiltration through an allowlisted destination defeats this detector, which is why the suppression counters are exported and are meant to be reviewed"
+}

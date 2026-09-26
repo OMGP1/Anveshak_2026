@@ -1,0 +1,196 @@
+{
+  "kind": "offline-interleaved-multi-attack",
+  "scenario_files": [
+    "benign",
+    "syn_flood",
+    "udp_reflection",
+    "slowloris",
+    "beacon_jitter",
+    "dga_burst",
+    "dns_tunnel",
+    "ja4_spoof",
+    "port_scan",
+    "exfil_drip",
+    "exfil_bulk"
+  ],
+  "all_six_classes_before_eof": false,
+  "counts": {
+    "encrypted-malware": 6,
+    "dga-dns-tunnelling": 10,
+    "volumetric-ddos": 17,
+    "recon-scanning": 12,
+    "data-exfiltration": 3
+  },
+  "first_alert_packet_index": {
+    "encrypted-malware": 5076,
+    "dga-dns-tunnelling": 7599,
+    "volumetric-ddos": 8222,
+    "recon-scanning": 30935,
+    "data-exfiltration": 79047
+  },
+  "packets": 105142,
+  "elapsed_s": 33.761,
+  "packets_per_s": 3114.3,
+  "mbps": 8.805,
+  "declared_target_pps": 1000,
+  "minimum_complete_1s_bucket_pps": 1285.47,
+  "target_met_every_complete_bucket": true,
+  "buckets": [
+    {
+      "elapsed_s": 1.0,
+      "packets_per_s": 5618.51
+    },
+    {
+      "elapsed_s": 2.0,
+      "packets_per_s": 3930.66
+    },
+    {
+      "elapsed_s": 3.001,
+      "packets_per_s": 2492.09
+    },
+    {
+      "elapsed_s": 4.001,
+      "packets_per_s": 3331.82
+    },
+    {
+      "elapsed_s": 5.001,
+      "packets_per_s": 3217.03
+    },
+    {
+      "elapsed_s": 6.001,
+      "packets_per_s": 3415.1
+    },
+    {
+      "elapsed_s": 7.002,
+      "packets_per_s": 2453.61
+    },
+    {
+      "elapsed_s": 8.002,
+      "packets_per_s": 1944.88
+    },
+    {
+      "elapsed_s": 9.002,
+      "packets_per_s": 1691.21
+    },
+    {
+      "elapsed_s": 10.003,
+      "packets_per_s": 1884.11
+    },
+    {
+      "elapsed_s": 11.003,
+      "packets_per_s": 3513.5
+    },
+    {
+      "elapsed_s": 12.004,
+      "packets_per_s": 2932.44
+    },
+    {
+      "elapsed_s": 13.01,
+      "packets_per_s": 2605.94
+    },
+    {
+      "elapsed_s": 14.01,
+      "packets_per_s": 3430.62
+    },
+    {
+      "elapsed_s": 15.01,
+      "packets_per_s": 4166.95
+    },
+    {
+      "elapsed_s": 16.01,
+      "packets_per_s": 3886.7
+    },
+    {
+      "elapsed_s": 17.017,
+      "packets_per_s": 3910.05
+    },
+    {
+      "elapsed_s": 18.017,
+      "packets_per_s": 3971.39
+    },
+    {
+      "elapsed_s": 19.017,
+      "packets_per_s": 3367.12
+    },
+    {
+      "elapsed_s": 20.018,
+      "packets_per_s": 2635.69
+    },
+    {
+      "elapsed_s": 21.018,
+      "packets_per_s": 3130.9
+    },
+    {
+      "elapsed_s": 22.018,
+      "packets_per_s": 7382.54
+    },
+    {
+      "elapsed_s": 23.018,
+      "packets_per_s": 3461.71
+    },
+    {
+      "elapsed_s": 24.019,
+      "packets_per_s": 3846.7
+    },
+    {
+      "elapsed_s": 25.019,
+      "packets_per_s": 4108.39
+    },
+    {
+      "elapsed_s": 26.03,
+      "packets_per_s": 4263.11
+    },
+    {
+      "elapsed_s": 27.032,
+      "packets_per_s": 2465.56
+    },
+    {
+      "elapsed_s": 28.033,
+      "packets_per_s": 2175.95
+    },
+    {
+      "elapsed_s": 29.033,
+      "packets_per_s": 2441.87
+    },
+    {
+      "elapsed_s": 30.033,
+      "packets_per_s": 1941.01
+    },
+    {
+      "elapsed_s": 31.041,
+      "packets_per_s": 1557.24
+    },
+    {
+      "elapsed_s": 32.048,
+      "packets_per_s": 1285.47
+    },
+    {
+      "elapsed_s": 33.055,
+      "packets_per_s": 1286.95
+    }
+  ],
+  "exported_records": 48,
+  "ledger_ok": true,
+  "memory_bytes": {
+    "flow_table": 42074,
+    "beacon_table": 1330188,
+    "sketches": 16606928,
+    "models": 3846730
+  },
+  "configuration": {
+    "flow_capacity": 50000,
+    "model_alert_max_per_class": 0,
+    "detectors": {
+      "ddos": {
+        "protocol_flood": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Synthetic captures, interleaved at original timestamps; not independent real-attack validation.",
+    "Offline ingestion rate includes inference and JSON persistence but is not NIC capture throughput.",
+    "Class presence is a concurrency check, not precision or recall."
+  ]
+}

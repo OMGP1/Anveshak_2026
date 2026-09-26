@@ -1,0 +1,17 @@
+{
+  "tls13": true,
+  "role_checks": true,
+  "direct_api_denied": true,
+  "websocket": true,
+  "rust_replay_alerts": 2,
+  "browser": {
+    "login": true,
+    "inventory_rendered": true,
+    "coverage_rows": 47,
+    "exact_methods_validated": 0,
+    "training_clicked": true,
+    "uncaught_exceptions": 0
+  },
+  "training_state": "candidate_rejected",
+  "evidence_directory": "/private/var/folders/tn/twpv_bvs0mdcnkbzy21mh_hw0000gn/T/pytest-of-om/pytest-26/test_hardened_stack0"
+}

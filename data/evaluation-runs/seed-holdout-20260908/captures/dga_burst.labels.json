@@ -1,0 +1,99 @@
+{
+  "attackers": [
+    "10.20.2.15",
+    "10.20.3.11"
+  ],
+  "attacks": [
+    {
+      "attackers": [
+        "10.20.2.15"
+      ],
+      "domain_count": 550,
+      "end_offset_s": 480.0,
+      "end_ts": 1788775680.0,
+      "expected_signal": "high qname_char_entropy and very poor bigram log-likelihood",
+      "protocol": "udp",
+      "sample_domains": [
+        "7a6fhdme5n9eofihw.net",
+        "lfrsr1ukop81t7sq2zh.net",
+        "473doim14swud83dnw1.net",
+        "zi0j1jupwx6y5aun2g.xyz",
+        "jerew8x9shtwq28zl.xyz",
+        "ezuuiwghojceva1.net",
+        "2qd9x93ce6tgs7cw.com",
+        "7m2saj6qaczt714b0.info",
+        "3moal03o3e8001ej.com",
+        "ah94409rhc7rzc53k2c.com",
+        "6axb86yo5xjq5smxee.xyz",
+        "ajltzda65gtdzl835.info"
+      ],
+      "start_offset_s": 120.0,
+      "start_ts": 1788775320.0,
+      "subtype": "dga-high-entropy",
+      "threat_class": "dga-dns-tunnelling",
+      "victim_ports": [
+        53
+      ],
+      "victims": [
+        "10.20.0.53"
+      ]
+    },
+    {
+      "attackers": [
+        "10.20.3.11"
+      ],
+      "domain_count": 380,
+      "end_offset_s": 520.0,
+      "end_ts": 1788775720.0,
+      "expected_signal": "near-normal character entropy, only the bigram model separates it",
+      "protocol": "udp",
+      "sample_domains": [
+        "quarryfalcon.com",
+        "walnutamber.org",
+        "kindlegable.net",
+        "kettlevessel.org",
+        "gablelantern.net",
+        "cedarjasper.org",
+        "falconsable.net",
+        "hollownimbus.org",
+        "falconvelvet.com",
+        "mortarharbor.com",
+        "mortarthistle.org",
+        "cedartimber.com"
+      ],
+      "start_offset_s": 150.0,
+      "start_ts": 1788775350.0,
+      "subtype": "dga-dictionary",
+      "threat_class": "dga-dns-tunnelling",
+      "victim_ports": [
+        53
+      ],
+      "victims": [
+        "10.20.0.53"
+      ]
+    }
+  ],
+  "benign_only": false,
+  "capture": {
+    "base_ts": 1788775200.0,
+    "bytes": 2858342,
+    "duration_s": 599.795485,
+    "first_ts": 1788775200.175839,
+    "flow_records": 2798,
+    "last_ts": 1788775799.971324,
+    "packets": 8286
+  },
+  "emulates": "nxdomain bursts from one algorithmic dga family and one dictionary family",
+  "generated_by": "training/generate_scenarios.py",
+  "internal_prefix": "10.20.0.0/16",
+  "name": "DGA burst, algorithmic and dictionary",
+  "scenario": "dga_burst",
+  "seed": 27055006,
+  "stands_in_for": "DGArchive name lists replayed as dns queries",
+  "synthesis_note": "every pcap in data/scenarios was synthesised packet by packet with dpkt.pcap.Writer by training/generate_scenarios.py. no attack tool was run to produce them and none is needed to regenerate them. the tools named below are what each scenario emulates, not what made it.",
+  "synthesised": true,
+  "threat_class": "dga-dns-tunnelling",
+  "victims": [
+    "10.20.0.53"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "attackers": [
+    "10.20.1.19"
+  ],
+  "attacks": [
+    {
+      "attackers": [
+        "10.20.1.19"
+      ],
+      "end_offset_s": 540.0,
+      "end_ts": 1788775740.0,
+      "expected_signal": "subdomain cardinality near 2200 under one registered domain, txt/null heavy",
+      "protocol": "udp",
+      "query_count": 2200,
+      "registered_domain": "dnsc2-relay.net",
+      "sample_qnames": [
+        "5o4dyh46wu43vznxbl75hiztmzg47gsnwez3zylhrgfuekhec55hroe.adfiaw4znakvergcq24dmyghmlrzzy4nlrjod34v2arfww3ktlpgwubm.t.dnsc2-relay.net",
+        "5juxpavpe5u2xqiy3tbl57rr6wyzjfjvqvkvz2ajew6p5dayk.w3hoer4tn6bf37cvyrabrb5h52pdopxcsfiath5dygnwo4wdqyzrwc54.t.dnsc2-relay.net",
+        "vzxw2574mxj7htxayv2t73eppftvsarlh47kggty6v2pdcvwnpxtxditfv.tqoideai746fyx7kw5pwijgrucg2cdkbh6bdqlduzr.t.dnsc2-relay.net",
+        "ldjvnvxowdy2a643w62g4u3d6clg5ghyrhf55j6mzspqdkv.fdm5rjqnlkln6gvv7tc7c6yogq6ibpzyjgxbjhgg.t.dnsc2-relay.net",
+        "uqk4wd4gyeya4muaq5bftzwhsxcel2sbf2vbzykmodove6.v5tmkf45kfgsiwvetxnkkjgqn6jhqrskniwrjkmcu67gua3max3m.t.dnsc2-relay.net",
+        "wphzdtlcg4oekbkbh7ox4toowwh4et4p5jip2oy357xiz.5byh3yg6wc7kryz7zyf424rv4xbinvjxnuz4cg6fewrclnb.t.dnsc2-relay.net",
+        "4sxlzfj7pylmr6gcvj466klrkqd33dtqxzlok26g25ahhgennt4ww.t3kjxcpmi6ti33yrhdqxfvh3iyjo6jhkl5mnn46foyex5syphb.t.dnsc2-relay.net",
+        "n5gdpvu7xupey3lqvfei4pibyjw3aqdljfhncpo6bcxff.ddtwouxumlqjaatnnw2daco4cp76wjkyt6uc7cub452xy4c.t.dnsc2-relay.net"
+      ],
+      "start_offset_s": 60.0,
+      "start_ts": 1788775260.0,
+      "subtype": "dns-tunnel-txt-null",
+      "threat_class": "dga-dns-tunnelling",
+      "victim_ports": [
+        53
+      ],
+      "victims": [
+        "10.20.0.53"
+      ]
+    }
+  ],
+  "benign_only": false,
+  "capture": {
+    "base_ts": 1788775200.0,
+    "bytes": 3646058,
+    "duration_s": 597.829956,
+    "first_ts": 1788775200.144792,
+    "flow_records": 5094,
+    "last_ts": 1788775797.974748,
+    "packets": 9498
+  },
+  "emulates": "base32 encoded subdomains under one registered domain, txt and null answers",
+  "generated_by": "training/generate_scenarios.py",
+  "internal_prefix": "10.20.0.0/16",
+  "name": "DNS tunnelling over TXT and NULL",
+  "scenario": "dns_tunnel",
+  "seed": 27055007,
+  "stands_in_for": "iodine / dnscat2",
+  "synthesis_note": "every pcap in data/scenarios was synthesised packet by packet with dpkt.pcap.Writer by training/generate_scenarios.py. no attack tool was run to produce them and none is needed to regenerate them. the tools named below are what each scenario emulates, not what made it.",
+  "synthesised": true,
+  "threat_class": "dga-dns-tunnelling",
+  "victims": [
+    "10.20.0.53"
+  ]
+}

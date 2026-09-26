@@ -1,0 +1,75 @@
+{
+  "attackers": [
+    "91.240.118.20",
+    "91.240.118.21",
+    "91.240.118.22",
+    "91.240.118.23",
+    "91.240.118.24",
+    "91.240.118.25",
+    "91.240.118.26",
+    "91.240.118.27",
+    "91.240.118.28",
+    "91.240.118.29",
+    "91.240.118.30",
+    "91.240.118.31",
+    "91.240.118.32",
+    "91.240.118.33"
+  ],
+  "attacks": [
+    {
+      "attackers": [
+        "91.240.118.20",
+        "91.240.118.21",
+        "91.240.118.22",
+        "91.240.118.23",
+        "91.240.118.24",
+        "91.240.118.25",
+        "91.240.118.26",
+        "91.240.118.27",
+        "91.240.118.28",
+        "91.240.118.29",
+        "91.240.118.30",
+        "91.240.118.31",
+        "91.240.118.32",
+        "91.240.118.33"
+      ],
+      "end_offset_s": 570.0,
+      "end_ts": 1788775770.0,
+      "expected_signal": "400 concurrent flows, no FIN, tiny payloads, low packets per second",
+      "protocol": "tcp",
+      "start_offset_s": 90.0,
+      "start_ts": 1788775290.0,
+      "subtype": "slowloris-connection-exhaustion",
+      "threat_class": "volumetric-ddos",
+      "victim_ports": [
+        80
+      ],
+      "victims": [
+        "10.20.4.17"
+      ]
+    }
+  ],
+  "benign_only": false,
+  "capture": {
+    "base_ts": 1788775200.0,
+    "bytes": 2834966,
+    "duration_s": 599.0398,
+    "first_ts": 1788775200.909162,
+    "flow_records": 3747,
+    "last_ts": 1788775799.948962,
+    "packets": 16279
+  },
+  "emulates": "many long-lived half-open http requests held open with header drips",
+  "generated_by": "training/generate_scenarios.py",
+  "internal_prefix": "10.20.0.0/16",
+  "name": "Slowloris connection exhaustion",
+  "scenario": "slowloris",
+  "seed": 27055004,
+  "stands_in_for": "slowloris.pl / slowhttptest -H",
+  "synthesis_note": "every pcap in data/scenarios was synthesised packet by packet with dpkt.pcap.Writer by training/generate_scenarios.py. no attack tool was run to produce them and none is needed to regenerate them. the tools named below are what each scenario emulates, not what made it.",
+  "synthesised": true,
+  "threat_class": "volumetric-ddos",
+  "victims": [
+    "10.20.4.17"
+  ]
+}

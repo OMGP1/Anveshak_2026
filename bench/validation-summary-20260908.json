@@ -1,0 +1,56 @@
+{
+  "tests": {
+    "tests": 413,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 13,
+    "passed": 400
+  },
+  "ui_build": "passed",
+  "candidate_directory": "data\\training-runs\\quality-20260908-validated",
+  "model_hash": "sha256:c2805b8caae968e78f012c8fdd83fb0f614fc7bbe94c124ffc5c2b5ac33190ea",
+  "candidate_state": "candidate_rejected",
+  "selected_rounds": 335,
+  "anomaly_trees": 500,
+  "serving_artifacts_unchanged": true,
+  "feature_dataset_reproduced": true,
+  "performance_gates": {
+    "serving": {
+      "scope": "Local mixed-synthetic engine plus durable-ledger qualification, not full-stack production certification",
+      "passed": false,
+      "checks": {
+        "duration": true,
+        "sustained_rate": false,
+        "latency_p99": true,
+        "python_memory": true,
+        "native_source": false,
+        "durable_ledger": true,
+        "models_enabled": true
+      },
+      "failed_checks": [
+        "sustained_rate",
+        "native_source"
+      ],
+      "production_certified": false
+    },
+    "candidate": {
+      "scope": "Local mixed-synthetic engine plus durable-ledger qualification, not full-stack production certification",
+      "passed": false,
+      "checks": {
+        "duration": true,
+        "sustained_rate": false,
+        "latency_p99": false,
+        "python_memory": true,
+        "native_source": false,
+        "durable_ledger": true,
+        "models_enabled": true
+      },
+      "failed_checks": [
+        "sustained_rate",
+        "latency_p99",
+        "native_source"
+      ],
+      "production_certified": false
+    }
+  }
+}

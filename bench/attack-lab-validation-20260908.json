@@ -1,0 +1,80 @@
+{
+    "date":  "2026-09-08",
+    "checks":  [
+                   {
+                       "report":  "data/attack-lab/20260908T010247Z-51e4733a/report.json",
+                       "mode":  "live",
+                       "scenario":  "mixed",
+                       "passed":  true,
+                       "packets":  224,
+                       "alerts":  3,
+                       "classes":  {
+                                       "dga-dns-tunnelling":  2,
+                                       "recon-scanning":  1
+                                   },
+                       "capture_stopped":  true,
+                       "ledger_ok":  null
+                   },
+                   {
+                       "report":  "data/attack-lab/20260908T010408Z-7f51964f/report.json",
+                       "mode":  "offline",
+                       "scenario":  null,
+                       "passed":  true,
+                       "packets":  105142,
+                       "alerts":  66,
+                       "classes":  {
+                                       "encrypted-malware":  6,
+                                       "dga-dns-tunnelling":  10,
+                                       "volumetric-ddos":  17,
+                                       "recon-scanning":  12,
+                                       "data-exfiltration":  3,
+                                       "c2-beaconing":  18
+                                   },
+                       "capture_stopped":  null,
+                       "ledger_ok":  true
+                   },
+                   {
+                       "report":  "data/attack-lab/20260908T010408Z-d03b4ff1/report.json",
+                       "mode":  "live",
+                       "scenario":  "benign",
+                       "passed":  true,
+                       "packets":  64,
+                       "alerts":  0,
+                       "classes":  {
+
+                                   },
+                       "capture_stopped":  true,
+                       "ledger_ok":  null
+                   },
+                   {
+                       "report":  "data/attack-lab/20260908T010837Z-5fc1c542/report.json",
+                       "mode":  "live",
+                       "scenario":  "scan",
+                       "passed":  true,
+                       "packets":  96,
+                       "alerts":  1,
+                       "classes":  {
+                                       "recon-scanning":  1
+                                   },
+                       "capture_stopped":  true,
+                       "ledger_ok":  null
+                   },
+                   {
+                       "report":  "data/attack-lab/20260908T010921Z-4678c3cc/report.json",
+                       "mode":  "live",
+                       "scenario":  "dns-tunnel",
+                       "passed":  true,
+                       "packets":  128,
+                       "alerts":  2,
+                       "classes":  {
+                                       "dga-dns-tunnelling":  2
+                                   },
+                       "capture_stopped":  true,
+                       "ledger_ok":  null
+                   }
+               ],
+    "targeted_tests_passed":  52,
+    "frontend_build":  "passed",
+    "browser_checks":  ".runtime/attack-lab-browser-checks.json",
+    "limitations":  "Synthetic functional checks; no precision/recall or remote-network coverage claim. Driver drops unknown."
+}

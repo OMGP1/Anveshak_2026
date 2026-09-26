@@ -1,0 +1,343 @@
+{
+  "capture_span_s": 9906.757,
+  "capture_speedup": 59.2,
+  "command": "python D:\\DiscordTools\\SIH winning project 2026\\SIH2026_prototype\\bench\\throughput.py --scenario all --duration 300 --no-loop --engine-config bench/windows-coverage-config.json --ledger .runtime/state/bench-coverage-complete-20260908.jsonl --json bench/throughput-coverage-complete-20260908.json",
+  "config": {
+    "bucket_s": 1.0,
+    "duration_s": 300.0,
+    "engine_config": {
+      "anomaly_enabled": true,
+      "detectors": {
+        "ddos": {
+          "protocol_flood": {
+            "absolute_pps": 25000,
+            "absolute_syn_pps": 1000,
+            "capacity": 4096,
+            "cooldown_s": 60,
+            "enabled": true,
+            "minimum_pps": 2500,
+            "minimum_syn_pps": 100,
+            "sigma": 6,
+            "warmup_windows": 10
+          }
+        }
+      },
+      "model_dir": "D:\\DiscordTools\\SIH winning project 2026\\SIH2026_prototype\\data\\training-runs\\coverage-20260908-validated",
+      "model_enabled": true
+    },
+    "ledger": ".runtime/state/bench-coverage-complete-20260908.jsonl",
+    "loop": false,
+    "mode": "virtual",
+    "scenario": [
+      "all"
+    ],
+    "source": "pcap",
+    "speed": 1.0,
+    "tick_interval_capture_s": 1.0,
+    "warmup_s": 2.0
+  },
+  "cycles": 1.0,
+  "elapsed_s": 167.391,
+  "engine": "engine.pipeline",
+  "engine_stats": {
+    "coverage_counts": {
+      "evicted": 0,
+      "flows": 20235,
+      "high": 4750,
+      "low": 15479,
+      "no_sni": 0,
+      "opaque": 6,
+      "quic": 0
+    },
+    "detections": 40,
+    "engine": "engine.pipeline",
+    "ensemble_alerts": 29,
+    "flow_table_entries": 14,
+    "flows_created": 20235,
+    "flows_evicted": 0,
+    "flows_expired": 20221,
+    "gate": {
+      "by_reason": {
+        "encrypted-candidate": 6,
+        "qa-sample": 183,
+        "uncertain-band": 8842
+      },
+      "config": {
+        "gate_encrypted_prob_min": 0.1,
+        "gate_fingerprint_consistency_max": 0.6,
+        "gate_qa_sample_rate": 0.005,
+        "gate_seed": 26145,
+        "gate_uncertain_high": 0.85,
+        "gate_uncertain_low": 0.35
+      },
+      "considered": 41700,
+      "promoted": 9031
+    },
+    "model_alerts": 9,
+    "model_alerts_rate_limited": 399,
+    "model_candidates_without_support": 11024,
+    "model_lineage": {
+      "dataset_version": "2026-09-08-scenario-replay-v2+seed-augmentation-v1",
+      "gate_encrypted_prob_min": 0.1,
+      "gate_fingerprint_consistency_max": 0.6,
+      "gate_qa_sample_rate": 0.005,
+      "gate_seed": 26145,
+      "gate_uncertain_high": 0.85,
+      "gate_uncertain_low": 0.35,
+      "model_hash": "sha256:b7d59de2e783767c5ebd3330206128c218135222db6177d1a9b6c20c86a6db32",
+      "model_id": "tier1-lgbm-v1.0.0"
+    },
+    "packets": 105142,
+    "rules": {
+      "detections": 31,
+      "detectors": [
+        {
+          "alerts": 4,
+          "extended": {
+            "alerts": 1,
+            "enabled": true,
+            "late_packets_skipped": 47,
+            "monitors": 1187,
+            "monitors_evicted": 0,
+            "name": "protocol_flood",
+            "pending_windows": 2
+          },
+          "hot_monitors": 112,
+          "monitors": 1146,
+          "monitors_evicted": 0,
+          "name": "ddos"
+        },
+        {
+          "alerts": 0,
+          "carried_by_regularity": 0,
+          "channels": 6228,
+          "coverage": {
+            "max_period_s": 21600.0,
+            "min_observation_s_for_max_period": 259200.0,
+            "min_samples": 12.0,
+            "observation_multiple": 12.0,
+            "ring_samples": 64.0
+          },
+          "evaluated": 948,
+          "event_bin_limit": 4096,
+          "name": "beaconing",
+          "rejected_fap": 696,
+          "rejected_stability": 252,
+          "resource_budget_skipped": 0,
+          "sessions": 19435
+        },
+        {
+          "alerts": 6,
+          "name": "dga",
+          "queries": 5469,
+          "sources": 41,
+          "suppressed": 0,
+          "zones": 1883
+        },
+        {
+          "agreements": 2449,
+          "alerts": 6,
+          "client_hellos": 2491,
+          "hosts": 2941,
+          "name": "encrypted",
+          "no_syn_observed": 0,
+          "sequence_limit_packets": 20,
+          "sequence_updates": 4001,
+          "udp443_note": "UDP/443 is a port heuristic, not verified QUIC or validated malware coverage",
+          "udp443_sequence_updates": 0,
+          "unknown_ja4": 0
+        },
+        {
+          "alerts": 11,
+          "name": "scan",
+          "probes": 19435,
+          "sources": 2942,
+          "sources_evicted": 0
+        },
+        {
+          "alerts": 3,
+          "name": "exfil",
+          "one_way_peers": 0,
+          "peers": 4573,
+          "peers_evicted": 0,
+          "suppressed": 0,
+          "unoriented_flows": 0
+        }
+      ]
+    },
+    "scored_observations": 41700,
+    "stage_calls": {
+      "alert": 41700,
+      "detect": 109380,
+      "features": 41700,
+      "flow_table": 105142,
+      "tier1": 41700
+    },
+    "stage_timing_note": "stage_timing_us is a mean per call and the stages are called different numbers of times, so the five figures must not be added. stage_timing_per_packet_us divides the same totals by the packet count, and those do add up to the per-packet cost",
+    "stage_timing_per_packet_us": {
+      "alert": 1.059,
+      "detect": 143.021,
+      "features": 4.022,
+      "flow_table": 24.648,
+      "tier1": 1363.925
+    },
+    "stage_timing_us": {
+      "alert": 2.67,
+      "detect": 137.48,
+      "features": 10.142,
+      "flow_table": 24.648,
+      "tier1": 3438.987
+    },
+    "suppressions": []
+  },
+  "final_flush_s": 0.0,
+  "final_rss_mb": 236.96,
+  "harness": "bench/throughput.py",
+  "host": {
+    "cpu_count": 16,
+    "implementation": "CPython",
+    "machine": "AMD64",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "processor": "Intel64 Family 6 Model 191 Stepping 2, GenuineIntel",
+    "python": "3.11.5"
+  },
+  "latency_basis": "ingest-to-alert: the packet entering the engine to a built and schema-validated alert. virtual mode has no wall clock wire, so this is pipeline latency, not wire-to-alert; includes ledger append/fsync, excludes DuckDB and browser delivery",
+  "latency_histogram_ms": {
+    "p50": 23.194,
+    "p95": 54.414,
+    "p99": 55.865,
+    "p999": 56.19
+  },
+  "latency_ms": {
+    "max": 56.19,
+    "p50": 23.64,
+    "p95": 52.48,
+    "p99": 55.206,
+    "p999": 56.092
+  },
+  "latency_samples": 40,
+  "lineage": {
+    "dataset_version": "2026-09-08-scenario-replay-v2+seed-augmentation-v1",
+    "gate_encrypted_prob_min": 0.1,
+    "gate_fingerprint_consistency_max": 0.6,
+    "gate_qa_sample_rate": 0.005,
+    "gate_seed": 26145,
+    "gate_uncertain_high": 0.85,
+    "gate_uncertain_low": 0.35,
+    "model_hash": "sha256:b7d59de2e783767c5ebd3330206128c218135222db6177d1a9b6c20c86a6db32",
+    "model_id": "tier1-lgbm-v1.0.0"
+  },
+  "mean": {
+    "flows_per_s": 120.9,
+    "mbps": 1.776,
+    "packets_per_s": 628.1,
+    "records_per_s": 628.1
+  },
+  "memory_bytes": {
+    "beacon_table": 1333844,
+    "flow_table": 14308,
+    "models": 12518331,
+    "sketches": 14022424
+  },
+  "memory_caps_bytes": {
+    "beacon_table": 31350000,
+    "flow_table": 151600000,
+    "models": 12518331,
+    "sketches": 44826900
+  },
+  "notes": [
+    "periodic tick work is driven by capture time, not by tick count: this run pushed 9907 s of capture through in 167.4 s of wall clock, a 59x speedup, so the engine did about 59 times the periodic analysis per wall second that a live link at this packet rate would ask for",
+    "virtual mode consumes as fast as the engine can, so this is the throughput claim and not the demo claim, and its latency is ingest-to-alert",
+    "opening each source indexes the capture and happens before the clock starts, so it is not counted against throughput",
+    "p999 needs at least 1000 alerts to mean anything and this run produced 40"
+  ],
+  "peak_rss_mb": 237.28,
+  "stages": {
+    "engine_calls": {
+      "alert": 41700,
+      "detect": 109380,
+      "features": 41700,
+      "flow_table": 105142,
+      "tier1": 41700
+    },
+    "engine_total_ms": {
+      "alert": 111.3,
+      "detect": 15037.5,
+      "features": 422.9,
+      "flow_table": 2591.5,
+      "tier1": 143405.8
+    },
+    "engine_us_per_call": {
+      "alert": 2.669,
+      "detect": 137.479,
+      "features": 10.141,
+      "flow_table": 24.648,
+      "tier1": 3438.988
+    },
+    "top_calls": {
+      "alert_out": 40,
+      "clock": 105142,
+      "engine_feed": 105142,
+      "engine_tick": 4237,
+      "harness": 105142,
+      "source": 105142
+    },
+    "top_total_ms": {
+      "alert_out": 236.5,
+      "clock": 99.1,
+      "engine_feed": 149177.6,
+      "engine_tick": 12844.2,
+      "harness": 150.3,
+      "source": 4883.0
+    },
+    "top_us_per_call": {
+      "alert_out": 5913.387,
+      "clock": 0.943,
+      "engine_feed": 1418.82,
+      "engine_tick": 3031.427,
+      "harness": 0.0,
+      "source": 46.442
+    }
+  },
+  "sustained": {
+    "buckets": 167,
+    "flows_per_s": {
+      "max": 1485.7,
+      "mean": 120.0,
+      "min": 2.0,
+      "p5": 4.9,
+      "p50": 64.1
+    },
+    "mbps": {
+      "max": 29.7,
+      "mean": 1.7,
+      "min": 0.1,
+      "p5": 0.1,
+      "p50": 1.0
+    },
+    "packets_per_s": {
+      "max": 3844.5,
+      "mean": 608.7,
+      "min": 88.1,
+      "p5": 128.0,
+      "p50": 403.4
+    },
+    "records_per_s": {
+      "max": 3844.5,
+      "mean": 608.7,
+      "min": 88.1,
+      "p5": 128.0,
+      "p50": 403.4
+    },
+    "steady_buckets": 166,
+    "warmup_s": 2.0
+  },
+  "totals": {
+    "alerts": 40,
+    "bytes": 37156610,
+    "flows": 20235,
+    "packets": 105142,
+    "records": 105142,
+    "ticks": 4237
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "attackers": [
+    "10.20.5.31",
+    "10.20.5.32",
+    "10.20.5.33"
+  ],
+  "attacks": [
+    {
+      "actual_tcp_family": "linux",
+      "attackers": [
+        "10.20.5.31",
+        "10.20.5.32",
+        "10.20.5.33"
+      ],
+      "claimed_tls_profile": "chrome-windows",
+      "end_offset_s": 570.0,
+      "end_ts": 1788775770.0,
+      "expected_signal": "clienthello claims chrome on windows, the syn is ttl 64 with linux option order",
+      "protocol": "tcp",
+      "start_offset_s": 40.0,
+      "start_ts": 1788775240.0,
+      "subtype": "ja4-tcp-fingerprint-disagreement",
+      "threat_class": "encrypted-malware",
+      "victim_ports": [
+        443
+      ],
+      "victims": [
+        "198.51.100.24",
+        "198.51.100.61",
+        "198.51.100.98"
+      ]
+    }
+  ],
+  "benign_only": false,
+  "capture": {
+    "base_ts": 1788775200.0,
+    "bytes": 3040581,
+    "duration_s": 597.996071,
+    "first_ts": 1788775200.022164,
+    "flow_records": 1000,
+    "last_ts": 1788775798.018235,
+    "packets": 7025
+  },
+  "emulates": "tls clienthello claiming chrome-on-windows from a host whose syn is linux",
+  "generated_by": "training/generate_scenarios.py",
+  "internal_prefix": "10.20.0.0/16",
+  "name": "JA4-spoofed TLS from a Linux host",
+  "scenario": "ja4_spoof",
+  "seed": 27055008,
+  "stands_in_for": "a tls client library with a copied chrome fingerprint (utls style)",
+  "synthesis_note": "every pcap in data/scenarios was synthesised packet by packet with dpkt.pcap.Writer by training/generate_scenarios.py. no attack tool was run to produce them and none is needed to regenerate them. the tools named below are what each scenario emulates, not what made it.",
+  "synthesised": true,
+  "threat_class": "encrypted-malware",
+  "victims": [
+    "198.51.100.24",
+    "198.51.100.61",
+    "198.51.100.98"
+  ]
+}

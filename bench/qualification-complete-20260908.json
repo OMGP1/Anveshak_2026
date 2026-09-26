@@ -1,0 +1,39 @@
+{
+  "serving": {
+    "scope": "Local mixed-synthetic engine plus durable-ledger qualification, not full-stack production certification",
+    "passed": false,
+    "checks": {
+      "duration": true,
+      "sustained_rate": false,
+      "latency_p99": true,
+      "python_memory": true,
+      "native_source": false,
+      "durable_ledger": true,
+      "models_enabled": true
+    },
+    "failed_checks": [
+      "sustained_rate",
+      "native_source"
+    ],
+    "production_certified": false
+  },
+  "candidate": {
+    "scope": "Local mixed-synthetic engine plus durable-ledger qualification, not full-stack production certification",
+    "passed": false,
+    "checks": {
+      "duration": true,
+      "sustained_rate": false,
+      "latency_p99": false,
+      "python_memory": true,
+      "native_source": false,
+      "durable_ledger": true,
+      "models_enabled": true
+    },
+    "failed_checks": [
+      "sustained_rate",
+      "latency_p99",
+      "native_source"
+    ],
+    "production_certified": false
+  }
+}

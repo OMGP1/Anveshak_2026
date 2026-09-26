@@ -1,0 +1,10 @@
+{
+  "alerts_before": 40,
+  "alerts_after": 40,
+  "all_detection_payloads_identical": true,
+  "excluded_fields": [
+    "x_latency_ms",
+    "x_prev_hash"
+  ],
+  "scope": "Identical complete capture replay before/after the exact anomaly-scoring optimization. Only latency and hash-chain fields excluded."
+}

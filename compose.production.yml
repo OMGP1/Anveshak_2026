@@ -1,0 +1,75 @@
+# Single-node hardened deployment. Pin reviewed image digests in your release overlay.
+# SIH_UID/GID must own .runtime/state and be able to read mounted 0600 secrets.
+services:
+  api:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.api
+    user: "${SIH_UID:-10001}:${SIH_GID:-10001}"
+    init: true
+    restart: unless-stopped
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    cpus: 2
+    mem_limit: 4g
+    pids_limit: 128
+    stop_grace_period: 25s
+    tmpfs: [/tmp:size=128m,noexec,nosuid]
+    environment:
+      SIH_PRODUCTION: "1"
+      SIH_API_HOST: "0.0.0.0"
+      SIH_GATEWAY_SECRET_FILE: /run/secrets/backend-token
+      SIH_MODEL_PUBLIC_KEY: /run/secrets/model-trust.pub
+      SIH_MODEL_DIR: /models
+      SIH_STATE_DIR: /state
+      SIH_ENGINE_CONFIG: /app/config/engine-production.json
+      SIH_AUTO_TRAIN: "0"
+    volumes:
+      - ./.runtime/state:/state
+      - ./.runtime/models:/models:ro
+      - ./.runtime/secrets/backend-token:/run/secrets/backend-token:ro
+      - ./.runtime/secrets/model-trust.pub:/run/secrets/model-trust.pub:ro
+      - ./data/scenarios:/app/data/scenarios:ro
+      - ./data/lab-runs:/app/data/lab-runs:ro
+    networks: [enclave]
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; t=open('/run/secrets/backend-token').read().strip(); r=urllib.request.Request('http://127.0.0.1:8000/api/health',headers={'X-SIH-Gateway':t,'X-SIH-Role':'viewer','X-SIH-User':'healthcheck'}); urllib.request.urlopen(r,timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+    logging:
+      driver: json-file
+      options: {max-size: 10m, max-file: "3"}
+  gateway:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile.gateway
+    user: "${SIH_UID:-10001}:${SIH_GID:-10001}"
+    restart: unless-stopped
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    cpus: 1
+    mem_limit: 256m
+    pids_limit: 32
+    # Keep loopback by default. The reviewed management-LAN overlay binds only 10.10.40.10.
+    ports: ["${SIH_GATEWAY_BIND:-127.0.0.1}:8443:8443"]
+    command: ["-listen", "0.0.0.0:8443", "-upstream", "http://api:8000", "-public-host", "${SIH_PUBLIC_HOST:-localhost:8443}", "-users", "/run/secrets/gateway-users.json", "-backend-secret", "/run/secrets/backend-token", "-audit", "/state/gateway-audit.jsonl", "-cert", "/run/secrets/tls.crt", "-key", "/run/secrets/tls.key"]
+    volumes:
+      - ./.runtime/state:/state
+      - ./.runtime/secrets/gateway-users.json:/run/secrets/gateway-users.json:ro
+      - ./.runtime/secrets/backend-token:/run/secrets/backend-token:ro
+      - ./.runtime/secrets/tls.crt:/run/secrets/tls.crt:ro
+      - ./.runtime/secrets/tls.key:/run/secrets/tls.key:ro
+    networks: [operator, enclave]
+    depends_on:
+      api: {condition: service_healthy}
+    logging:
+      driver: json-file
+      options: {max-size: 10m, max-file: "3"}
+networks:
+  enclave:
+    internal: true
+  operator: {}

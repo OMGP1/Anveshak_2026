@@ -1,0 +1,52 @@
+{
+  "attackers": [
+    "10.20.2.19"
+  ],
+  "attacks": [
+    {
+      "attackers": [
+        "10.20.2.19"
+      ],
+      "chunk_interval_s": 20.0,
+      "chunks": 81,
+      "end_offset_s": 1740.0,
+      "end_ts": 1788776940.0,
+      "expected_signal": "sustained outbound:inbound ratio near 20:1 with no single large window",
+      "outbound_bytes": 1020600,
+      "protocol": "tcp",
+      "start_offset_s": 120.0,
+      "start_ts": 1788775320.0,
+      "subtype": "slow-drip-https-upload",
+      "threat_class": "data-exfiltration",
+      "victim_ports": [
+        443
+      ],
+      "victims": [
+        "185.244.25.61"
+      ]
+    }
+  ],
+  "benign_only": false,
+  "capture": {
+    "base_ts": 1788775200.0,
+    "bytes": 3508291,
+    "duration_s": 1790.907583,
+    "first_ts": 1788775208.581647,
+    "flow_records": 936,
+    "last_ts": 1788776999.48923,
+    "packets": 7089
+  },
+  "emulates": "small outbound chunks every 20 s sustained for 30 minutes to one destination",
+  "generated_by": "training/generate_scenarios.py",
+  "internal_prefix": "10.20.0.0/16",
+  "name": "Slow-drip exfiltration",
+  "scenario": "exfil_drip",
+  "seed": 27055010,
+  "stands_in_for": "a chunked-upload staging script over https",
+  "synthesis_note": "every pcap in data/scenarios was synthesised packet by packet with dpkt.pcap.Writer by training/generate_scenarios.py. no attack tool was run to produce them and none is needed to regenerate them. the tools named below are what each scenario emulates, not what made it.",
+  "synthesised": true,
+  "threat_class": "data-exfiltration",
+  "victims": [
+    "185.244.25.61"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "kind": "real-local-loopback-live-capture",
+  "interface_name": "Adapter for loopback traffic capture",
+  "generated_packets": 20000,
+  "generation_seconds": 20.002,
+  "target_packets_per_s": 1000.0,
+  "generated_packets_per_s": 999.91,
+  "processed_packets": 20000,
+  "alerts": 0,
+  "capture": {
+    "backend": "dumpcap",
+    "interface": "\\Device\\NPF_Loopback",
+    "filter": "ip and (udp and src host 127.0.0.1 and dst host 127.0.0.1 and src port 54606 and dst port 54605)",
+    "packets_received": 20000,
+    "packets_decoded": 20000,
+    "undecodable": 0,
+    "truncated_packets": 0,
+    "queue_depth": 0,
+    "queue_capacity": 4096,
+    "queue_dropped": 0,
+    "stale_dropped": 0,
+    "kernel_dropped": null,
+    "kernel_drop_note": "Driver drops are not exposed by this PCAP pipe.",
+    "max_queue_age_s": 2.0,
+    "snapshot_bytes": 4096,
+    "timestamp_regressions": 0,
+    "decode_ns": 345629600
+  },
+  "no_processing_error": true,
+  "limitations": "Small benign loopback exchange, not real attack validation or a saturation benchmark.",
+  "clean_stop": true,
+  "json_export_valid": true
+}

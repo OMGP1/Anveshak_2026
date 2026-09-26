@@ -1,0 +1,46 @@
+{
+ "coverage_note": "three tls stacks only, learned from one local capture. this is not a survey of real-world ja4 values and must not be presented as one",
+ "derived_from": "data/scenarios/benign.pcap parsed with engine.decode.tls and engine.decode.tcp_fingerprint, labelled against data/scenarios/tls_profiles.json",
+ "families": {
+  "t13d1516h2_8daaf6152771_50f4c41e1dde": {
+   "agreeing_hosts": 21,
+   "confidence": 1.0,
+   "expected_tcp_families": [
+    "windows"
+   ],
+   "label": "Chrome on Windows",
+   "reference_os": "windows",
+   "reference_tcp_fingerprint": "128:65535:1460:mss,nop,ws,nop,nop,sok",
+   "support_hosts": 21,
+   "tls_profile": "chrome-windows"
+  },
+  "t13d1714h2_5b57614c22b0_280534f07fee": {
+   "agreeing_hosts": 14,
+   "confidence": 1.0,
+   "expected_tcp_families": [
+    "linux"
+   ],
+   "label": "Firefox on Linux",
+   "reference_os": "linux",
+   "reference_tcp_fingerprint": "64:64240:1460:mss,sok,ts,nop,ws",
+   "support_hosts": 14,
+   "tls_profile": "firefox-linux"
+  },
+  "t13d1715h2_5b57614c22b0_14ddf43afaad": {
+   "agreeing_hosts": 5,
+   "confidence": 1.0,
+   "expected_tcp_families": [
+    "bsd"
+   ],
+   "label": "Safari on macOS",
+   "reference_os": "macos",
+   "reference_tcp_fingerprint": "64:65535:1460:mss,nop,ws,nop,nop,ts,sok,eol",
+   "support_hosts": 5,
+   "tls_profile": "safari-macos"
+  }
+ },
+ "macos_note": "safari on macos pairs with a bsd-family tcp stack, which is what the darwin kernel presents",
+ "method": "the benign baseline capture is spoof-free by construction, so the ja4 to tcp fingerprint pairing observed there is the ground-truth pairing for this enclave",
+ "unknown_policy": "a ja4 absent from this table produces no claim and no rule alert. the detector falls back to the online co-occurrence learner instead",
+ "version": "1.0.0"
+}

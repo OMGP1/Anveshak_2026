@@ -1,0 +1,6 @@
+# Apply only on the approved enclave host after the physical/network checklist passes:
+# Copy deploy/management-lan/management-lan.env.example to an approved local
+# .env first, then run docker compose with this overlay.
+services:
+  gateway:
+    command: ["-listen", "0.0.0.0:8443", "-upstream", "http://api:8000", "-public-host", "anveshak.soc.internal:8443", "-users", "/run/secrets/gateway-users.json", "-backend-secret", "/run/secrets/backend-token", "-audit", "/state/gateway-audit.jsonl", "-cert", "/run/secrets/tls.crt", "-key", "/run/secrets/tls.key"]

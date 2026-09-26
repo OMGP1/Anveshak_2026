@@ -1,0 +1,282 @@
+{
+  "configuration": {
+    "flow_capacity": 50000,
+    "model_alert_max_per_class": 0,
+    "detectors": {
+      "ddos": {
+        "protocol_flood": {
+          "enabled": true,
+          "minimum_pps": 2500,
+          "absolute_pps": 25000,
+          "minimum_syn_pps": 100,
+          "absolute_syn_pps": 1000,
+          "sigma": 6,
+          "warmup_windows": 10,
+          "cooldown_s": 60,
+          "capacity": 4096
+        }
+      },
+      "beaconing": {
+        "busy_source_min_samples": 32,
+        "busy_source_cv_max": 0.25,
+        "busy_source_min_span_s": 600,
+        "max_assessments_per_tick": 32
+      }
+    }
+  },
+  "cases": [
+    {
+      "case": "tcp_large_download/20260908",
+      "packets": 4000,
+      "capture_seconds": 9.9975,
+      "wall_seconds": 0.125,
+      "false_alerts": 0,
+      "by_class": {},
+      "by_source": {},
+      "alerts": []
+    },
+    {
+      "case": "udp443_large_download/20260908",
+      "packets": 4000,
+      "capture_seconds": 9.9975,
+      "wall_seconds": 0.127,
+      "false_alerts": 0,
+      "by_class": {},
+      "by_source": {},
+      "alerts": []
+    },
+    {
+      "case": "dns_mixed_record_types/20260908",
+      "packets": 2000,
+      "capture_seconds": 99.901,
+      "wall_seconds": 0.612,
+      "false_alerts": 0,
+      "by_class": {},
+      "by_source": {},
+      "alerts": []
+    },
+    {
+      "case": "dns_txt_other_domain/20260908",
+      "packets": 1000,
+      "capture_seconds": 99.9,
+      "wall_seconds": 0.512,
+      "false_alerts": 0,
+      "by_class": {},
+      "by_source": {},
+      "alerts": []
+    },
+    {
+      "case": "dns_long_cdn_names/20260908",
+      "packets": 1000,
+      "capture_seconds": 99.9,
+      "wall_seconds": 0.393,
+      "false_alerts": 0,
+      "by_class": {},
+      "by_source": {},
+      "alerts": []
+    },
+    {
+      "case": "browser_connection_burst/20260908",
+      "packets": 2000,
+      "capture_seconds": 39.904,
+      "wall_seconds": 0.249,
+      "false_alerts": 0,
+      "by_class": {},
+      "by_source": {},
+      "alerts": []
+    },
+    {
+      "case": "regular_tls_session/20260908",
+      "packets": 200,
+      "capture_seconds": 19.9,
+      "wall_seconds": 0.02,
+      "false_alerts": 0,
+      "by_class": {},
+      "by_source": {},
+      "alerts": []
+    },
+    {
+      "case": "regular_udp443_session/20260908",
+      "packets": 200,
+      "capture_seconds": 19.9,
+      "wall_seconds": 0.021,
+      "false_alerts": 0,
+      "by_class": {},
+      "by_source": {},
+      "alerts": []
+    },
+    {
+      "case": "tcp_large_download/20260909",
+      "packets": 4000,
+      "capture_seconds": 9.9975,
+      "wall_seconds": 0.12,
+      "false_alerts": 0,
+      "by_class": {},
+      "by_source": {},
+      "alerts": []
+    },
+    {
+      "case": "udp443_large_download/20260909",
+      "packets": 4000,
+      "capture_seconds": 9.9975,
+      "wall_seconds": 0.129,
+      "false_alerts": 0,
+      "by_class": {},
+      "by_source": {},
+      "alerts": []
+    },
+    {
+      "case": "dns_mixed_record_types/20260909",
+      "packets": 2000,
+      "capture_seconds": 99.901,
+      "wall_seconds": 0.596,
+      "false_alerts": 0,
+      "by_class": {},
+      "by_source": {},
+      "alerts": []
+    },
+    {
+      "case": "dns_txt_other_domain/20260909",
+      "packets": 1000,
+      "capture_seconds": 99.9,
+      "wall_seconds": 0.456,
+      "false_alerts": 0,
+      "by_class": {},
+      "by_source": {},
+      "alerts": []
+    },
+    {
+      "case": "dns_long_cdn_names/20260909",
+      "packets": 1000,
+      "capture_seconds": 99.9,
+      "wall_seconds": 0.391,
+      "false_alerts": 0,
+      "by_class": {},
+      "by_source": {},
+      "alerts": []
+    },
+    {
+      "case": "browser_connection_burst/20260909",
+      "packets": 2000,
+      "capture_seconds": 39.904,
+      "wall_seconds": 0.244,
+      "false_alerts": 0,
+      "by_class": {},
+      "by_source": {},
+      "alerts": []
+    },
+    {
+      "case": "regular_tls_session/20260909",
+      "packets": 200,
+      "capture_seconds": 19.9,
+      "wall_seconds": 0.02,
+      "false_alerts": 0,
+      "by_class": {},
+      "by_source": {},
+      "alerts": []
+    },
+    {
+      "case": "regular_udp443_session/20260909",
+      "packets": 200,
+      "capture_seconds": 19.9,
+      "wall_seconds": 0.021,
+      "false_alerts": 0,
+      "by_class": {},
+      "by_source": {},
+      "alerts": []
+    },
+    {
+      "case": "tcp_large_download/20260910",
+      "packets": 4000,
+      "capture_seconds": 9.9975,
+      "wall_seconds": 0.121,
+      "false_alerts": 0,
+      "by_class": {},
+      "by_source": {},
+      "alerts": []
+    },
+    {
+      "case": "udp443_large_download/20260910",
+      "packets": 4000,
+      "capture_seconds": 9.9975,
+      "wall_seconds": 0.12,
+      "false_alerts": 0,
+      "by_class": {},
+      "by_source": {},
+      "alerts": []
+    },
+    {
+      "case": "dns_mixed_record_types/20260910",
+      "packets": 2000,
+      "capture_seconds": 99.901,
+      "wall_seconds": 0.572,
+      "false_alerts": 0,
+      "by_class": {},
+      "by_source": {},
+      "alerts": []
+    },
+    {
+      "case": "dns_txt_other_domain/20260910",
+      "packets": 1000,
+      "capture_seconds": 99.9,
+      "wall_seconds": 0.486,
+      "false_alerts": 0,
+      "by_class": {},
+      "by_source": {},
+      "alerts": []
+    },
+    {
+      "case": "dns_long_cdn_names/20260910",
+      "packets": 1000,
+      "capture_seconds": 99.9,
+      "wall_seconds": 0.415,
+      "false_alerts": 0,
+      "by_class": {},
+      "by_source": {},
+      "alerts": []
+    },
+    {
+      "case": "browser_connection_burst/20260910",
+      "packets": 2000,
+      "capture_seconds": 39.904,
+      "wall_seconds": 0.241,
+      "false_alerts": 0,
+      "by_class": {},
+      "by_source": {},
+      "alerts": []
+    },
+    {
+      "case": "regular_tls_session/20260910",
+      "packets": 200,
+      "capture_seconds": 19.9,
+      "wall_seconds": 0.021,
+      "false_alerts": 0,
+      "by_class": {},
+      "by_source": {},
+      "alerts": []
+    },
+    {
+      "case": "regular_udp443_session/20260910",
+      "packets": 200,
+      "capture_seconds": 19.9,
+      "wall_seconds": 0.021,
+      "false_alerts": 0,
+      "by_class": {},
+      "by_source": {},
+      "alerts": []
+    },
+    {
+      "case": "bundled-benign",
+      "packets": 8150,
+      "capture_seconds": 300.952664,
+      "wall_seconds": 2.259,
+      "false_alerts": 0,
+      "by_class": {},
+      "by_source": {},
+      "alerts": []
+    }
+  ],
+  "false_alerts": 0,
+  "packets": 51350,
+  "scope": "Synthetic benign challenges, not independent real-traffic evaluation"
+}

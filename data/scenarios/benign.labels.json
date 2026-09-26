@@ -1,0 +1,25 @@
+{
+  "attackers": [],
+  "attacks": [],
+  "benign_only": true,
+  "capture": {
+    "base_ts": 1788775200.0,
+    "bytes": 3436575,
+    "duration_s": 300.952664,
+    "first_ts": 1788775200.03784,
+    "flow_records": 1200,
+    "last_ts": 1788775500.990504,
+    "packets": 8150
+  },
+  "emulates": "mixed web, dns, tls and bulk office traffic across 40 internal hosts",
+  "generated_by": "training/generate_scenarios.py",
+  "internal_prefix": "10.20.0.0/16",
+  "name": "Benign baseline",
+  "scenario": "benign",
+  "seed": 26145001,
+  "stands_in_for": "iperf3 / Ostinato / TRex benign load generation",
+  "synthesis_note": "every pcap in data/scenarios was synthesised packet by packet with dpkt.pcap.Writer by training/generate_scenarios.py. no attack tool was run to produce them and none is needed to regenerate them. the tools named below are what each scenario emulates, not what made it.",
+  "synthesised": true,
+  "threat_class": "benign",
+  "victims": []
+}

@@ -1,0 +1,22 @@
+{
+  "confidence": {
+    "definition": "A recorded detector or review-priority score. Its meaning depends on the alert's calibration field; it is not automatically the probability that an attack occurred.",
+    "limitations": ["Compare scores only when their detector and calibration basis match."]
+  },
+  "novelty score": {
+    "definition": "A comparison between an observed flow window and an approved benign reference. A rare observation may be malicious or may be a legitimate operational change.",
+    "limitations": ["It does not prove a zero-day vulnerability or identify a CVE."]
+  },
+  "stix": {
+    "definition": "Structured Threat Information Expression, the structured format used for the alert record and its evidence extensions.",
+    "limitations": ["A STIX Indicator is evidence for investigation, not an automatic block instruction."]
+  },
+  "treeshap": {
+    "definition": "Feature contributions explaining a LightGBM model output in its configured output space.",
+    "limitations": ["It does not establish the real-world cause of an incident."]
+  },
+  "data diode": {
+    "definition": "A physical one-way transfer boundary that permits copied traffic into the monitoring enclave without a reverse fibre path.",
+    "limitations": ["Receive-only software or a firewall alone does not prove a hardware diode is deployed correctly."]
+  }
+}

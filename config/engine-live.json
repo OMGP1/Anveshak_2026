@@ -1,0 +1,25 @@
+{
+  "flow_capacity": 50000,
+  "model_alert_max_per_class": 0,
+  "detectors": {
+    "ddos": {
+      "protocol_flood": {
+        "enabled": true,
+        "minimum_pps": 2500,
+        "absolute_pps": 25000,
+        "minimum_syn_pps": 100,
+        "absolute_syn_pps": 1000,
+        "sigma": 6,
+        "warmup_windows": 10,
+        "cooldown_s": 60,
+        "capacity": 4096
+      }
+    },
+    "beaconing": {
+      "busy_source_min_samples": 32,
+      "busy_source_cv_max": 0.25,
+      "busy_source_min_span_s": 600,
+      "max_assessments_per_tick": 32
+    }
+  }
+}

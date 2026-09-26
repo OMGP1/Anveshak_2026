@@ -1,0 +1,10 @@
+{
+  "scope": "Local mixed-synthetic engine plus durable-ledger qualification, not full-stack production certification",
+  "minimum_duration_s": 30,
+  "minimum_post_warmup_bucket_packets_per_s": 3000,
+  "maximum_ingest_to_synced_alert_p99_ms": 50,
+  "maximum_python_peak_rss_mb": 512,
+  "required_source": "rust-pcap",
+  "required_models": true,
+  "excluded": ["capture device", "DuckDB index", "gateway and browser delivery", "long soak", "external traffic"]
+}

@@ -1,0 +1,19 @@
+{
+  "detectors": {
+    "ddos": {
+      "protocol_flood": {
+        "enabled": true,
+        "minimum_pps": 2500,
+        "absolute_pps": 25000,
+        "minimum_syn_pps": 100,
+        "absolute_syn_pps": 1000,
+        "sigma": 6,
+        "warmup_windows": 10,
+        "cooldown_s": 60,
+        "capacity": 4096
+      }
+    }
+  },
+  "model_enabled": true,
+  "anomaly_enabled": true
+}

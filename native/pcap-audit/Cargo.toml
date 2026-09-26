@@ -1,0 +1,9 @@
+[package]
+name = "pcap-audit"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[profile.release]
+overflow-checks = true
+strip = "none"

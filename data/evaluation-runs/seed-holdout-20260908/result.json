@@ -1,0 +1,1974 @@
+{
+  "manifest": {
+    "role": "evaluation_only",
+    "seed_offset": 910000,
+    "model_hashes": {
+      "baseline": "sha256:c2805b8caae968e78f012c8fdd83fb0f614fc7bbe94c124ffc5c2b5ac33190ea",
+      "intensive": "sha256:e3f9238e4b94cfcee14ba02c5719708b303cb65fc5477eb6afda38b859491fcb",
+      "candidate": "sha256:b7d59de2e783767c5ebd3330206128c218135222db6177d1a9b6c20c86a6db32"
+    },
+    "bundle_hashes": {
+      "baseline": {
+        "tier1_lgbm.txt": "sha256:c2805b8caae968e78f012c8fdd83fb0f614fc7bbe94c124ffc5c2b5ac33190ea",
+        "tier1_meta.json": "sha256:c7a3a31dcf9a80f6499df1981d1fc987ebd9eb3b54236937d82fbff9c1c01901",
+        "tier1_calibration.json": "sha256:15bf4dfec53879e366b0ac95e0661ead91c676a9e140bde90533316a9d35fb4a",
+        "anomaly_iforest.pkl": "sha256:f54f1e68d9946ee8408a8079cb70b8627645373f80750edc4ed933ebbbd5c31f",
+        "anomaly_meta.json": "sha256:6ca45c05437c8b993d6781a2ff6b977a14a7ab0d2db96ae6714466b1a1d8ce7b"
+      },
+      "intensive": {
+        "tier1_lgbm.txt": "sha256:e3f9238e4b94cfcee14ba02c5719708b303cb65fc5477eb6afda38b859491fcb",
+        "tier1_meta.json": "sha256:fd2e19c17e1dad20d472dae84f4a82949a4667776b25b5b5690e8556f11db6fc",
+        "tier1_calibration.json": "sha256:b56765af1bdc2b0246be0184101c002ac508efc363d04f3505e0149ec7cf9bea",
+        "anomaly_iforest.pkl": "sha256:f54f1e68d9946ee8408a8079cb70b8627645373f80750edc4ed933ebbbd5c31f",
+        "anomaly_meta.json": "sha256:6ca45c05437c8b993d6781a2ff6b977a14a7ab0d2db96ae6714466b1a1d8ce7b"
+      },
+      "candidate": {
+        "tier1_lgbm.txt": "sha256:b7d59de2e783767c5ebd3330206128c218135222db6177d1a9b6c20c86a6db32",
+        "tier1_meta.json": "sha256:4c6d32bf23393252cbdae538d7cdd55897b3c37ca7079b929e961222eeeaec87",
+        "tier1_calibration.json": "sha256:3f5a56fff379b9dbcbd7b33d68a0056fb98acb23b3d36ae74268e6be76c4f315",
+        "anomaly_iforest.pkl": "sha256:b4aabf0449cc50353d40ad8a786af2693f60880e18576c95cdfe8be7723c7177",
+        "anomaly_meta.json": "sha256:ec10397792fd4258335f594e2cef9d198a172349181ba2eb137759fb3d040d77"
+      }
+    },
+    "limitation": "New random seeds of the existing synthetic templates, not new malware families or independent real traffic. Repeated evaluations are development results.",
+    "rows": 34142,
+    "sources": [
+      {
+        "scenario": "benign",
+        "seed": 27055001,
+        "packets": 8385,
+        "bytes": 3697974,
+        "flow_records": 1156,
+        "duration_s": 298.747236,
+        "pcap_size": 3949548,
+        "flow_size": 102213,
+        "pcap_sha256": "0805e03aaf90082325ad69988fa3c0474551e9d0f39c81692dfb6ec2a5d84416",
+        "extraction": {
+          "scenario": "benign",
+          "packets": 8385,
+          "rows": 2081,
+          "observations_scored": 0,
+          "seconds": 0.64,
+          "packets_per_s": 13162.1,
+          "rule_detections": 0
+        }
+      },
+      {
+        "scenario": "syn_flood",
+        "seed": 27055002,
+        "packets": 13113,
+        "bytes": 1631720,
+        "flow_records": 10782,
+        "duration_s": 177.172708,
+        "pcap_size": 2025134,
+        "flow_size": 953242,
+        "pcap_sha256": "e3b2016a4d6ba0416b6c274ad0a1aefcdced70da9fa244257964e98b5b38d0fc",
+        "extraction": {
+          "scenario": "syn_flood",
+          "packets": 13113,
+          "rows": 8437,
+          "observations_scored": 0,
+          "seconds": 2.11,
+          "packets_per_s": 6214.6,
+          "rule_detections": 1
+        }
+      },
+      {
+        "scenario": "udp_reflection",
+        "seed": 27055003,
+        "packets": 8110,
+        "bytes": 3141070,
+        "flow_records": 560,
+        "duration_s": 178.835521,
+        "pcap_size": 3384394,
+        "flow_size": 49796,
+        "pcap_sha256": "8c2d86c7c65f1b322f8aeec5d7cf7630d312afa70f04b384a8e7e608caca2654",
+        "extraction": {
+          "scenario": "udp_reflection",
+          "packets": 8110,
+          "rows": 2041,
+          "observations_scored": 0,
+          "seconds": 0.57,
+          "packets_per_s": 14301.5,
+          "rule_detections": 1
+        }
+      },
+      {
+        "scenario": "slowloris",
+        "seed": 27055004,
+        "packets": 16279,
+        "bytes": 2834966,
+        "flow_records": 3747,
+        "duration_s": 599.0398,
+        "pcap_size": 3323360,
+        "flow_size": 331051,
+        "pcap_sha256": "9d21bf4312b61d2a422d78e0c27c287e9b04dd37445ed2dd5d6364977bf6d264",
+        "extraction": {
+          "scenario": "slowloris",
+          "packets": 16279,
+          "rows": 4432,
+          "observations_scored": 0,
+          "seconds": 1.11,
+          "packets_per_s": 14618.3,
+          "rule_detections": 2
+        }
+      },
+      {
+        "scenario": "beacon_jitter",
+        "seed": 27055005,
+        "packets": 11544,
+        "bytes": 3752699,
+        "flow_records": 1942,
+        "duration_s": 3593.122705,
+        "pcap_size": 4099043,
+        "flow_size": 171908,
+        "pcap_sha256": "e94c1f196a473e2d12a7ddd761e251894fed91d0aab451a93d8ddea77dbc5831",
+        "extraction": {
+          "scenario": "beacon_jitter",
+          "packets": 11544,
+          "rows": 3921,
+          "observations_scored": 0,
+          "seconds": 4.55,
+          "packets_per_s": 2539.2,
+          "rule_detections": 8
+        }
+      },
+      {
+        "scenario": "dga_burst",
+        "seed": 27055006,
+        "packets": 8286,
+        "bytes": 2858342,
+        "flow_records": 2798,
+        "duration_s": 599.795485,
+        "pcap_size": 3106946,
+        "flow_size": 239136,
+        "pcap_sha256": "29fdbf08d12e1b2e6f73fbe2d269e997ba08304bced630d9f140518520854e45",
+        "extraction": {
+          "scenario": "dga_burst",
+          "packets": 8286,
+          "rows": 3012,
+          "observations_scored": 0,
+          "seconds": 1.97,
+          "packets_per_s": 4203.5,
+          "rule_detections": 4
+        }
+      },
+      {
+        "scenario": "dns_tunnel",
+        "seed": 27055007,
+        "packets": 9498,
+        "bytes": 3646058,
+        "flow_records": 5094,
+        "duration_s": 597.829956,
+        "pcap_size": 3931022,
+        "flow_size": 435475,
+        "pcap_sha256": "a4e5e4dbab5c1196b7ae41d867e0037b6d559ae203e599c5fec2a78f5030f05e",
+        "extraction": {
+          "scenario": "dns_tunnel",
+          "packets": 9498,
+          "rows": 3746,
+          "observations_scored": 0,
+          "seconds": 2.31,
+          "packets_per_s": 4118.4,
+          "rule_detections": 2
+        }
+      },
+      {
+        "scenario": "ja4_spoof",
+        "seed": 27055008,
+        "packets": 7025,
+        "bytes": 3040581,
+        "flow_records": 1000,
+        "duration_s": 597.996071,
+        "pcap_size": 3251355,
+        "flow_size": 88436,
+        "pcap_sha256": "f0fd7800d294774ce4bac717e671c8b4aaae487b7a03a3aa129705692059ae1b",
+        "extraction": {
+          "scenario": "ja4_spoof",
+          "packets": 7025,
+          "rows": 1744,
+          "observations_scored": 0,
+          "seconds": 1.27,
+          "packets_per_s": 5529.3,
+          "rule_detections": 6
+        }
+      },
+      {
+        "scenario": "port_scan",
+        "seed": 27055009,
+        "packets": 9459,
+        "bytes": 2993773,
+        "flow_records": 3734,
+        "duration_s": 598.541044,
+        "pcap_size": 3277567,
+        "flow_size": 326092,
+        "pcap_sha256": "f66fd083d1858e5edd6fb211954f2a54e724779c5bba5e2908aa9326f0b4e962",
+        "extraction": {
+          "scenario": "port_scan",
+          "packets": 9459,
+          "rows": 2366,
+          "observations_scored": 0,
+          "seconds": 1.85,
+          "packets_per_s": 5101.7,
+          "rule_detections": 11
+        }
+      },
+      {
+        "scenario": "exfil_drip",
+        "seed": 27055010,
+        "packets": 7089,
+        "bytes": 3508291,
+        "flow_records": 936,
+        "duration_s": 1790.907583,
+        "pcap_size": 3720985,
+        "flow_size": 83127,
+        "pcap_sha256": "402808e03e16e5e98e1fe1e9f613f8399220e75674c76494c10ce5d7cfcfe0be",
+        "extraction": {
+          "scenario": "exfil_drip",
+          "packets": 7089,
+          "rows": 1727,
+          "observations_scored": 0,
+          "seconds": 1.27,
+          "packets_per_s": 5600.7,
+          "rule_detections": 2
+        }
+      },
+      {
+        "scenario": "exfil_bulk",
+        "seed": 27055011,
+        "packets": 6582,
+        "bytes": 6368069,
+        "flow_records": 256,
+        "duration_s": 887.623133,
+        "pcap_size": 6565553,
+        "flow_size": 22767,
+        "pcap_sha256": "f2feb25c424a13ef84461c0e213e5394d3844ded41b816097d1e15be8f4c5370",
+        "extraction": {
+          "scenario": "exfil_bulk",
+          "packets": 6582,
+          "rows": 635,
+          "observations_scored": 0,
+          "seconds": 0.79,
+          "packets_per_s": 8370.0,
+          "rule_detections": 1
+        }
+      }
+    ],
+    "dataset_sha256": "sha256:2f9bb3dae90e0c3915e76d728f4d9194a567f8e3b11f27819d95746dc95ff567"
+  },
+  "models": {
+    "baseline": {
+      "rows": 34142,
+      "false_positives": {
+        "benign_rows": 14270,
+        "attack_predictions": 34,
+        "rate": 0.0023826208829712684,
+        "basis": "Model argmax on benign feature observations, not live alert precision"
+      },
+      "natural_prevalence": 0.58204,
+      "constructed_prevalence": 0.001,
+      "benign_row_weight": 1391.179,
+      "pr_auc_attack_vs_benign": 0.3269,
+      "pr_auc_at_natural_prevalence": 0.9936,
+      "pr_auc_per_class": {
+        "c2-beaconing": 0.0502,
+        "data-exfiltration": 0.648,
+        "dga-dns-tunnelling": 0.9888,
+        "encrypted-malware": 0.3744,
+        "recon-scanning": 0.7502,
+        "volumetric-ddos": 0.9972
+      },
+      "per_class": {
+        "benign": {
+          "precision": 0.9999,
+          "recall": 0.9976,
+          "f1": 0.9988,
+          "weighted_support": 19852128.0,
+          "rows": 14270
+        },
+        "c2-beaconing": {
+          "precision": 0.0382,
+          "recall": 0.6127,
+          "f1": 0.072,
+          "weighted_support": 2169.0,
+          "rows": 2169
+        },
+        "data-exfiltration": {
+          "precision": 0.9379,
+          "recall": 0.6441,
+          "f1": 0.7637,
+          "weighted_support": 680.0,
+          "rows": 680
+        },
+        "dga-dns-tunnelling": {
+          "precision": 0.284,
+          "recall": 0.9974,
+          "f1": 0.4421,
+          "weighted_support": 3872.0,
+          "rows": 3872
+        },
+        "encrypted-malware": {
+          "precision": 0.041,
+          "recall": 0.5085,
+          "f1": 0.0759,
+          "weighted_support": 234.0,
+          "rows": 234
+        },
+        "recon-scanning": {
+          "precision": 1.0,
+          "recall": 0.7463,
+          "f1": 0.8547,
+          "weighted_support": 670.0,
+          "rows": 670
+        },
+        "volumetric-ddos": {
+          "precision": 0.8976,
+          "recall": 0.9974,
+          "f1": 0.9449,
+          "weighted_support": 12247.0,
+          "rows": 12247
+        }
+      },
+      "per_class_at_natural_prevalence": {
+        "benign": {
+          "precision": 0.9139,
+          "recall": 0.9976,
+          "f1": 0.9539,
+          "weighted_support": 14270.0,
+          "rows": 14270
+        },
+        "c2-beaconing": {
+          "precision": 0.9568,
+          "recall": 0.6127,
+          "f1": 0.747,
+          "weighted_support": 2169.0,
+          "rows": 2169
+        },
+        "data-exfiltration": {
+          "precision": 0.9379,
+          "recall": 0.6441,
+          "f1": 0.7637,
+          "weighted_support": 680.0,
+          "rows": 680
+        },
+        "dga-dns-tunnelling": {
+          "precision": 0.9982,
+          "recall": 0.9974,
+          "f1": 0.9978,
+          "weighted_support": 3872.0,
+          "rows": 3872
+        },
+        "encrypted-malware": {
+          "precision": 0.9835,
+          "recall": 0.5085,
+          "f1": 0.6704,
+          "weighted_support": 234.0,
+          "rows": 234
+        },
+        "recon-scanning": {
+          "precision": 1.0,
+          "recall": 0.7463,
+          "f1": 0.8547,
+          "weighted_support": 670.0,
+          "rows": 670
+        },
+        "volumetric-ddos": {
+          "precision": 0.9998,
+          "recall": 0.9974,
+          "f1": 0.9986,
+          "weighted_support": 12247.0,
+          "rows": 12247
+        }
+      },
+      "macro_f1_attack_classes": 0.5256,
+      "ablation": {
+        "note": "rules only is the deterministic detector verdict, held for 300 seconds against the relevant subject of the flow it named. the hold matters: a rule raises one alert per episode and then goes quiet on its own cooldown, so scoring the bare fire against every row would report a recall near zero for a detector that in fact caught the attack. model only is the argmax of the calibrated tier-1 probability on its own. both is a row-level approximation, which is to let a held rule name the class and to let the model name a class alone only when it clears model_alert_confidence, has class-specific observed evidence, and the benign-only isolation forest calls the row unusual. The relevant subject is the destination for DDoS and source otherwise. DNS rules do not taint other clients of the resolver. Runtime allowlists, quotas, cooldowns and the minimum TreeSHAP-evidence count are not simulated here. Actual false alerts are measured separately by bench.false_positives.",
+        "model_alert_confidence": 0.99,
+        "rule_persistence_s": 300.0,
+        "macro_f1_attack_classes": {
+          "rules_only": 0.4743,
+          "model_only": 0.5256,
+          "both": 0.4786
+        },
+        "rules_only": {
+          "benign": {
+            "precision": 0.9997,
+            "recall": 0.9916,
+            "f1": 0.9956,
+            "weighted_support": 19852128.0,
+            "rows": 14270
+          },
+          "c2-beaconing": {
+            "precision": 0.0037,
+            "recall": 0.0904,
+            "f1": 0.0071,
+            "weighted_support": 2169.0,
+            "rows": 2169
+          },
+          "data-exfiltration": {
+            "precision": 0.0155,
+            "recall": 0.225,
+            "f1": 0.0289,
+            "weighted_support": 680.0,
+            "rows": 680
+          },
+          "dga-dns-tunnelling": {
+            "precision": 0.0344,
+            "recall": 0.9613,
+            "f1": 0.0665,
+            "weighted_support": 3872.0,
+            "rows": 3872
+          },
+          "encrypted-malware": {
+            "precision": 1.0,
+            "recall": 0.9615,
+            "f1": 0.9804,
+            "weighted_support": 234.0,
+            "rows": 234
+          },
+          "recon-scanning": {
+            "precision": 1.0,
+            "recall": 0.8164,
+            "f1": 0.8989,
+            "weighted_support": 670.0,
+            "rows": 670
+          },
+          "volumetric-ddos": {
+            "precision": 1.0,
+            "recall": 0.7609,
+            "f1": 0.8642,
+            "weighted_support": 12247.0,
+            "rows": 12247
+          }
+        },
+        "model_only": {
+          "benign": {
+            "precision": 0.9999,
+            "recall": 0.9976,
+            "f1": 0.9988,
+            "weighted_support": 19852128.0,
+            "rows": 14270
+          },
+          "c2-beaconing": {
+            "precision": 0.0382,
+            "recall": 0.6127,
+            "f1": 0.072,
+            "weighted_support": 2169.0,
+            "rows": 2169
+          },
+          "data-exfiltration": {
+            "precision": 0.9379,
+            "recall": 0.6441,
+            "f1": 0.7637,
+            "weighted_support": 680.0,
+            "rows": 680
+          },
+          "dga-dns-tunnelling": {
+            "precision": 0.284,
+            "recall": 0.9974,
+            "f1": 0.4421,
+            "weighted_support": 3872.0,
+            "rows": 3872
+          },
+          "encrypted-malware": {
+            "precision": 0.041,
+            "recall": 0.5085,
+            "f1": 0.0759,
+            "weighted_support": 234.0,
+            "rows": 234
+          },
+          "recon-scanning": {
+            "precision": 1.0,
+            "recall": 0.7463,
+            "f1": 0.8547,
+            "weighted_support": 670.0,
+            "rows": 670
+          },
+          "volumetric-ddos": {
+            "precision": 0.8976,
+            "recall": 0.9974,
+            "f1": 0.9449,
+            "weighted_support": 12247.0,
+            "rows": 12247
+          }
+        },
+        "both": {
+          "benign": {
+            "precision": 0.9997,
+            "recall": 0.9916,
+            "f1": 0.9956,
+            "weighted_support": 19852128.0,
+            "rows": 14270
+          },
+          "c2-beaconing": {
+            "precision": 0.0037,
+            "recall": 0.0904,
+            "f1": 0.0071,
+            "weighted_support": 2169.0,
+            "rows": 2169
+          },
+          "data-exfiltration": {
+            "precision": 0.0163,
+            "recall": 0.2368,
+            "f1": 0.0304,
+            "weighted_support": 680.0,
+            "rows": 680
+          },
+          "dga-dns-tunnelling": {
+            "precision": 0.0352,
+            "recall": 0.9845,
+            "f1": 0.0681,
+            "weighted_support": 3872.0,
+            "rows": 3872
+          },
+          "encrypted-malware": {
+            "precision": 1.0,
+            "recall": 0.9615,
+            "f1": 0.9804,
+            "weighted_support": 234.0,
+            "rows": 234
+          },
+          "recon-scanning": {
+            "precision": 1.0,
+            "recall": 0.8507,
+            "f1": 0.9194,
+            "weighted_support": 670.0,
+            "rows": 670
+          },
+          "volumetric-ddos": {
+            "precision": 1.0,
+            "recall": 0.7639,
+            "f1": 0.8661,
+            "weighted_support": 12247.0,
+            "rows": 12247
+          }
+        }
+      },
+      "reliability_weighted": {
+        "bins": [
+          {
+            "bin_low": 0.0,
+            "bin_high": 0.0833,
+            "mean_predicted": 5e-05,
+            "observed_frequency": 6e-05,
+            "rows": 15459,
+            "weighted_rows": 19794929.47
+          },
+          {
+            "bin_low": 0.0833,
+            "bin_high": 0.1667,
+            "mean_predicted": 0.14196,
+            "observed_frequency": 1.0,
+            "rows": 3,
+            "weighted_rows": 3.0
+          },
+          {
+            "bin_low": 0.1667,
+            "bin_high": 0.25,
+            "mean_predicted": 0.24525,
+            "observed_frequency": 1.0,
+            "rows": 1,
+            "weighted_rows": 1.0
+          },
+          {
+            "bin_low": 0.25,
+            "bin_high": 0.3333,
+            "mean_predicted": 0.27537,
+            "observed_frequency": 0.00144,
+            "rows": 3,
+            "weighted_rows": 1393.18
+          },
+          {
+            "bin_low": 0.3333,
+            "bin_high": 0.4167,
+            "mean_predicted": 0.38812,
+            "observed_frequency": 1.0,
+            "rows": 3,
+            "weighted_rows": 3.0
+          },
+          {
+            "bin_low": 0.4167,
+            "bin_high": 0.5,
+            "mean_predicted": 0.46904,
+            "observed_frequency": 0.01037,
+            "rows": 109,
+            "weighted_rows": 9840.25
+          },
+          {
+            "bin_low": 0.5,
+            "bin_high": 0.5833,
+            "mean_predicted": 0.50061,
+            "observed_frequency": 0.05835,
+            "rows": 872,
+            "weighted_rows": 14773.79
+          },
+          {
+            "bin_low": 0.5833,
+            "bin_high": 0.6667,
+            "mean_predicted": 0.60384,
+            "observed_frequency": 1.0,
+            "rows": 1,
+            "weighted_rows": 1.0
+          },
+          {
+            "bin_low": 0.6667,
+            "bin_high": 0.75,
+            "mean_predicted": 0.70419,
+            "observed_frequency": 1.0,
+            "rows": 1,
+            "weighted_rows": 1.0
+          },
+          {
+            "bin_low": 0.75,
+            "bin_high": 0.8333,
+            "mean_predicted": 0.80485,
+            "observed_frequency": 1.0,
+            "rows": 1,
+            "weighted_rows": 1.0
+          },
+          {
+            "bin_low": 0.8333,
+            "bin_high": 0.9167,
+            "mean_predicted": 0.89529,
+            "observed_frequency": 1.0,
+            "rows": 1,
+            "weighted_rows": 1.0
+          },
+          {
+            "bin_low": 0.9167,
+            "bin_high": 1.0,
+            "mean_predicted": 1.0,
+            "observed_frequency": 0.346,
+            "rows": 17688,
+            "weighted_rows": 51052.3
+          }
+        ],
+        "expected_calibration_error": 0.00227
+      },
+      "reliability_natural": {
+        "bins": [
+          {
+            "bin_low": 0.0,
+            "bin_high": 0.0833,
+            "mean_predicted": 0.00011,
+            "observed_frequency": 0.07963,
+            "rows": 15459,
+            "weighted_rows": 15459.0
+          },
+          {
+            "bin_low": 0.0833,
+            "bin_high": 0.1667,
+            "mean_predicted": 0.14196,
+            "observed_frequency": 1.0,
+            "rows": 3,
+            "weighted_rows": 3.0
+          },
+          {
+            "bin_low": 0.1667,
+            "bin_high": 0.25,
+            "mean_predicted": 0.24525,
+            "observed_frequency": 1.0,
+            "rows": 1,
+            "weighted_rows": 1.0
+          },
+          {
+            "bin_low": 0.25,
+            "bin_high": 0.3333,
+            "mean_predicted": 0.30771,
+            "observed_frequency": 0.66667,
+            "rows": 3,
+            "weighted_rows": 3.0
+          },
+          {
+            "bin_low": 0.3333,
+            "bin_high": 0.4167,
+            "mean_predicted": 0.38812,
+            "observed_frequency": 1.0,
+            "rows": 3,
+            "weighted_rows": 3.0
+          },
+          {
+            "bin_low": 0.4167,
+            "bin_high": 0.5,
+            "mean_predicted": 0.47713,
+            "observed_frequency": 0.93578,
+            "rows": 109,
+            "weighted_rows": 109.0
+          },
+          {
+            "bin_low": 0.5,
+            "bin_high": 0.5833,
+            "mean_predicted": 0.50341,
+            "observed_frequency": 0.98853,
+            "rows": 872,
+            "weighted_rows": 872.0
+          },
+          {
+            "bin_low": 0.5833,
+            "bin_high": 0.6667,
+            "mean_predicted": 0.60384,
+            "observed_frequency": 1.0,
+            "rows": 1,
+            "weighted_rows": 1.0
+          },
+          {
+            "bin_low": 0.6667,
+            "bin_high": 0.75,
+            "mean_predicted": 0.70419,
+            "observed_frequency": 1.0,
+            "rows": 1,
+            "weighted_rows": 1.0
+          },
+          {
+            "bin_low": 0.75,
+            "bin_high": 0.8333,
+            "mean_predicted": 0.80485,
+            "observed_frequency": 1.0,
+            "rows": 1,
+            "weighted_rows": 1.0
+          },
+          {
+            "bin_low": 0.8333,
+            "bin_high": 0.9167,
+            "mean_predicted": 0.89529,
+            "observed_frequency": 1.0,
+            "rows": 1,
+            "weighted_rows": 1.0
+          },
+          {
+            "bin_low": 0.9167,
+            "bin_high": 1.0,
+            "mean_predicted": 1.0,
+            "observed_frequency": 0.99864,
+            "rows": 17688,
+            "weighted_rows": 17688.0
+          }
+        ],
+        "expected_calibration_error": 0.05078
+      },
+      "reliability_weighted_after_prior_shift": {
+        "bins": [
+          {
+            "bin_low": 0.0,
+            "bin_high": 0.0833,
+            "mean_predicted": 5e-05,
+            "observed_frequency": 6e-05,
+            "rows": 15459,
+            "weighted_rows": 19794929.47
+          },
+          {
+            "bin_low": 0.0833,
+            "bin_high": 0.1667,
+            "mean_predicted": 0.14196,
+            "observed_frequency": 1.0,
+            "rows": 3,
+            "weighted_rows": 3.0
+          },
+          {
+            "bin_low": 0.1667,
+            "bin_high": 0.25,
+            "mean_predicted": 0.24525,
+            "observed_frequency": 1.0,
+            "rows": 1,
+            "weighted_rows": 1.0
+          },
+          {
+            "bin_low": 0.25,
+            "bin_high": 0.3333,
+            "mean_predicted": 0.27537,
+            "observed_frequency": 0.00144,
+            "rows": 3,
+            "weighted_rows": 1393.18
+          },
+          {
+            "bin_low": 0.3333,
+            "bin_high": 0.4167,
+            "mean_predicted": 0.38812,
+            "observed_frequency": 1.0,
+            "rows": 3,
+            "weighted_rows": 3.0
+          },
+          {
+            "bin_low": 0.4167,
+            "bin_high": 0.5,
+            "mean_predicted": 0.46904,
+            "observed_frequency": 0.01037,
+            "rows": 109,
+            "weighted_rows": 9840.25
+          },
+          {
+            "bin_low": 0.5,
+            "bin_high": 0.5833,
+            "mean_predicted": 0.50061,
+            "observed_frequency": 0.05835,
+            "rows": 872,
+            "weighted_rows": 14773.79
+          },
+          {
+            "bin_low": 0.5833,
+            "bin_high": 0.6667,
+            "mean_predicted": 0.60384,
+            "observed_frequency": 1.0,
+            "rows": 1,
+            "weighted_rows": 1.0
+          },
+          {
+            "bin_low": 0.6667,
+            "bin_high": 0.75,
+            "mean_predicted": 0.70419,
+            "observed_frequency": 1.0,
+            "rows": 1,
+            "weighted_rows": 1.0
+          },
+          {
+            "bin_low": 0.75,
+            "bin_high": 0.8333,
+            "mean_predicted": 0.80485,
+            "observed_frequency": 1.0,
+            "rows": 1,
+            "weighted_rows": 1.0
+          },
+          {
+            "bin_low": 0.8333,
+            "bin_high": 0.9167,
+            "mean_predicted": 0.89529,
+            "observed_frequency": 1.0,
+            "rows": 1,
+            "weighted_rows": 1.0
+          },
+          {
+            "bin_low": 0.9167,
+            "bin_high": 1.0,
+            "mean_predicted": 1.0,
+            "observed_frequency": 0.346,
+            "rows": 17688,
+            "weighted_rows": 51052.3
+          }
+        ],
+        "expected_calibration_error": 0.00227
+      },
+      "prior_shift_note": "Prior shift uses the model's calibration target (or measured calibration prevalence), not the test-label prevalence. When calibration already targets the evaluation prior, this is the identity. It assumes stable class-conditional distributions.",
+      "constructed_test_set": {
+        "benign_rows": 14270,
+        "attack_rows_kept": 14,
+        "measured_prevalence": 0.00098,
+        "draws": 400,
+        "pr_auc_mean": 0.3261,
+        "pr_auc_std": 0.0342,
+        "pr_auc_min": 0.1819,
+        "pr_auc_max": 0.3684,
+        "limitation": "only 14 attack rows survive at this ratio, so per-class precision and recall are not estimable here and only the pooled attack against benign pr-auc is reported"
+      }
+    },
+    "intensive": {
+      "rows": 34142,
+      "false_positives": {
+        "benign_rows": 14270,
+        "attack_predictions": 28,
+        "rate": 0.001962158374211633,
+        "basis": "Model argmax on benign feature observations, not live alert precision"
+      },
+      "natural_prevalence": 0.58204,
+      "constructed_prevalence": 0.001,
+      "benign_row_weight": 1391.179,
+      "pr_auc_attack_vs_benign": 0.3224,
+      "pr_auc_at_natural_prevalence": 0.9939,
+      "pr_auc_per_class": {
+        "c2-beaconing": 0.0462,
+        "data-exfiltration": 0.5504,
+        "dga-dns-tunnelling": 0.9826,
+        "encrypted-malware": 0.2601,
+        "recon-scanning": 0.7505,
+        "volumetric-ddos": 0.996
+      },
+      "per_class": {
+        "benign": {
+          "precision": 0.9999,
+          "recall": 0.998,
+          "f1": 0.999,
+          "weighted_support": 19852128.0,
+          "rows": 14270
+        },
+        "c2-beaconing": {
+          "precision": 0.0435,
+          "recall": 0.6127,
+          "f1": 0.0812,
+          "weighted_support": 2169.0,
+          "rows": 2169
+        },
+        "data-exfiltration": {
+          "precision": 0.132,
+          "recall": 0.6294,
+          "f1": 0.2182,
+          "weighted_support": 680.0,
+          "rows": 680
+        },
+        "dga-dns-tunnelling": {
+          "precision": 0.5814,
+          "recall": 0.9979,
+          "f1": 0.7347,
+          "weighted_support": 3872.0,
+          "rows": 3872
+        },
+        "encrypted-malware": {
+          "precision": 0.0407,
+          "recall": 0.5043,
+          "f1": 0.0753,
+          "weighted_support": 234.0,
+          "rows": 234
+        },
+        "recon-scanning": {
+          "precision": 1.0,
+          "recall": 0.7478,
+          "f1": 0.8557,
+          "weighted_support": 670.0,
+          "rows": 670
+        },
+        "volumetric-ddos": {
+          "precision": 0.8972,
+          "recall": 0.9931,
+          "f1": 0.9427,
+          "weighted_support": 12247.0,
+          "rows": 12247
+        }
+      },
+      "per_class_at_natural_prevalence": {
+        "benign": {
+          "precision": 0.9103,
+          "recall": 0.998,
+          "f1": 0.9522,
+          "weighted_support": 14270.0,
+          "rows": 14270
+        },
+        "c2-beaconing": {
+          "precision": 0.9616,
+          "recall": 0.6127,
+          "f1": 0.7485,
+          "weighted_support": 2169.0,
+          "rows": 2169
+        },
+        "data-exfiltration": {
+          "precision": 0.9244,
+          "recall": 0.6294,
+          "f1": 0.7489,
+          "weighted_support": 680.0,
+          "rows": 680
+        },
+        "dga-dns-tunnelling": {
+          "precision": 0.9995,
+          "recall": 0.9979,
+          "f1": 0.9987,
+          "weighted_support": 3872.0,
+          "rows": 3872
+        },
+        "encrypted-malware": {
+          "precision": 0.9833,
+          "recall": 0.5043,
+          "f1": 0.6667,
+          "weighted_support": 234.0,
+          "rows": 234
+        },
+        "recon-scanning": {
+          "precision": 1.0,
+          "recall": 0.7478,
+          "f1": 0.8557,
+          "weighted_support": 670.0,
+          "rows": 670
+        },
+        "volumetric-ddos": {
+          "precision": 0.9998,
+          "recall": 0.9931,
+          "f1": 0.9964,
+          "weighted_support": 12247.0,
+          "rows": 12247
+        }
+      },
+      "macro_f1_attack_classes": 0.4846,
+      "ablation": {
+        "note": "rules only is the deterministic detector verdict, held for 300 seconds against the relevant subject of the flow it named. the hold matters: a rule raises one alert per episode and then goes quiet on its own cooldown, so scoring the bare fire against every row would report a recall near zero for a detector that in fact caught the attack. model only is the argmax of the calibrated tier-1 probability on its own. both is a row-level approximation, which is to let a held rule name the class and to let the model name a class alone only when it clears model_alert_confidence, has class-specific observed evidence, and the benign-only isolation forest calls the row unusual. The relevant subject is the destination for DDoS and source otherwise. DNS rules do not taint other clients of the resolver. Runtime allowlists, quotas, cooldowns and the minimum TreeSHAP-evidence count are not simulated here. Actual false alerts are measured separately by bench.false_positives.",
+        "model_alert_confidence": 0.99,
+        "rule_persistence_s": 300.0,
+        "macro_f1_attack_classes": {
+          "rules_only": 0.4743,
+          "model_only": 0.4846,
+          "both": 0.4784
+        },
+        "rules_only": {
+          "benign": {
+            "precision": 0.9997,
+            "recall": 0.9916,
+            "f1": 0.9956,
+            "weighted_support": 19852128.0,
+            "rows": 14270
+          },
+          "c2-beaconing": {
+            "precision": 0.0037,
+            "recall": 0.0904,
+            "f1": 0.0071,
+            "weighted_support": 2169.0,
+            "rows": 2169
+          },
+          "data-exfiltration": {
+            "precision": 0.0155,
+            "recall": 0.225,
+            "f1": 0.0289,
+            "weighted_support": 680.0,
+            "rows": 680
+          },
+          "dga-dns-tunnelling": {
+            "precision": 0.0344,
+            "recall": 0.9613,
+            "f1": 0.0665,
+            "weighted_support": 3872.0,
+            "rows": 3872
+          },
+          "encrypted-malware": {
+            "precision": 1.0,
+            "recall": 0.9615,
+            "f1": 0.9804,
+            "weighted_support": 234.0,
+            "rows": 234
+          },
+          "recon-scanning": {
+            "precision": 1.0,
+            "recall": 0.8164,
+            "f1": 0.8989,
+            "weighted_support": 670.0,
+            "rows": 670
+          },
+          "volumetric-ddos": {
+            "precision": 1.0,
+            "recall": 0.7609,
+            "f1": 0.8642,
+            "weighted_support": 12247.0,
+            "rows": 12247
+          }
+        },
+        "model_only": {
+          "benign": {
+            "precision": 0.9999,
+            "recall": 0.998,
+            "f1": 0.999,
+            "weighted_support": 19852128.0,
+            "rows": 14270
+          },
+          "c2-beaconing": {
+            "precision": 0.0435,
+            "recall": 0.6127,
+            "f1": 0.0812,
+            "weighted_support": 2169.0,
+            "rows": 2169
+          },
+          "data-exfiltration": {
+            "precision": 0.132,
+            "recall": 0.6294,
+            "f1": 0.2182,
+            "weighted_support": 680.0,
+            "rows": 680
+          },
+          "dga-dns-tunnelling": {
+            "precision": 0.5814,
+            "recall": 0.9979,
+            "f1": 0.7347,
+            "weighted_support": 3872.0,
+            "rows": 3872
+          },
+          "encrypted-malware": {
+            "precision": 0.0407,
+            "recall": 0.5043,
+            "f1": 0.0753,
+            "weighted_support": 234.0,
+            "rows": 234
+          },
+          "recon-scanning": {
+            "precision": 1.0,
+            "recall": 0.7478,
+            "f1": 0.8557,
+            "weighted_support": 670.0,
+            "rows": 670
+          },
+          "volumetric-ddos": {
+            "precision": 0.8972,
+            "recall": 0.9931,
+            "f1": 0.9427,
+            "weighted_support": 12247.0,
+            "rows": 12247
+          }
+        },
+        "both": {
+          "benign": {
+            "precision": 0.9997,
+            "recall": 0.9916,
+            "f1": 0.9956,
+            "weighted_support": 19852128.0,
+            "rows": 14270
+          },
+          "c2-beaconing": {
+            "precision": 0.0037,
+            "recall": 0.0904,
+            "f1": 0.0071,
+            "weighted_support": 2169.0,
+            "rows": 2169
+          },
+          "data-exfiltration": {
+            "precision": 0.0162,
+            "recall": 0.2353,
+            "f1": 0.0303,
+            "weighted_support": 680.0,
+            "rows": 680
+          },
+          "dga-dns-tunnelling": {
+            "precision": 0.0351,
+            "recall": 0.9801,
+            "f1": 0.0678,
+            "weighted_support": 3872.0,
+            "rows": 3872
+          },
+          "encrypted-malware": {
+            "precision": 1.0,
+            "recall": 0.9615,
+            "f1": 0.9804,
+            "weighted_support": 234.0,
+            "rows": 234
+          },
+          "recon-scanning": {
+            "precision": 1.0,
+            "recall": 0.8493,
+            "f1": 0.9185,
+            "weighted_support": 670.0,
+            "rows": 670
+          },
+          "volumetric-ddos": {
+            "precision": 1.0,
+            "recall": 0.7639,
+            "f1": 0.8661,
+            "weighted_support": 12247.0,
+            "rows": 12247
+          }
+        }
+      },
+      "reliability_weighted": {
+        "bins": [
+          {
+            "bin_low": 0.0,
+            "bin_high": 0.0833,
+            "mean_predicted": 4e-05,
+            "observed_frequency": 6e-05,
+            "rows": 15501,
+            "weighted_rows": 19789410.75
+          },
+          {
+            "bin_low": 0.0833,
+            "bin_high": 0.1667,
+            "mean_predicted": 0.10606,
+            "observed_frequency": 0.00215,
+            "rows": 4,
+            "weighted_rows": 1394.18
+          },
+          {
+            "bin_low": 0.1667,
+            "bin_high": 0.25,
+            "mean_predicted": 0.19691,
+            "observed_frequency": 0.00072,
+            "rows": 2,
+            "weighted_rows": 1392.18
+          },
+          {
+            "bin_low": 0.25,
+            "bin_high": 0.3333,
+            "mean_predicted": 0.30195,
+            "observed_frequency": 1.0,
+            "rows": 10,
+            "weighted_rows": 10.0
+          },
+          {
+            "bin_low": 0.3333,
+            "bin_high": 0.4167,
+            "mean_predicted": 0.37856,
+            "observed_frequency": 0.00072,
+            "rows": 6,
+            "weighted_rows": 4176.54
+          },
+          {
+            "bin_low": 0.4167,
+            "bin_high": 0.5,
+            "mean_predicted": 0.46787,
+            "observed_frequency": 0.00599,
+            "rows": 122,
+            "weighted_rows": 18194.33
+          },
+          {
+            "bin_low": 0.5,
+            "bin_high": 0.5833,
+            "mean_predicted": 0.50237,
+            "observed_frequency": 0.21143,
+            "rows": 1870,
+            "weighted_rows": 8820.9
+          },
+          {
+            "bin_low": 0.5833,
+            "bin_high": 0.6667,
+            "mean_predicted": 0.63705,
+            "observed_frequency": 1.0,
+            "rows": 3,
+            "weighted_rows": 3.0
+          },
+          {
+            "bin_low": 0.6667,
+            "bin_high": 0.75,
+            "mean_predicted": 0.71011,
+            "observed_frequency": 1.0,
+            "rows": 4,
+            "weighted_rows": 4.0
+          },
+          {
+            "bin_low": 0.75,
+            "bin_high": 0.8333,
+            "mean_predicted": 0.82426,
+            "observed_frequency": 1.0,
+            "rows": 1,
+            "weighted_rows": 1.0
+          },
+          {
+            "bin_low": 0.8333,
+            "bin_high": 0.9167,
+            "mean_predicted": 0.86912,
+            "observed_frequency": 1.0,
+            "rows": 1,
+            "weighted_rows": 1.0
+          },
+          {
+            "bin_low": 0.9167,
+            "bin_high": 1.0,
+            "mean_predicted": 1.0,
+            "observed_frequency": 0.34152,
+            "rows": 16618,
+            "weighted_rows": 48592.12
+          }
+        ],
+        "expected_calibration_error": 0.00228
+      },
+      "reliability_natural": {
+        "bins": [
+          {
+            "bin_low": 0.0,
+            "bin_high": 0.0833,
+            "mean_predicted": 0.00011,
+            "observed_frequency": 0.08238,
+            "rows": 15501,
+            "weighted_rows": 15501.0
+          },
+          {
+            "bin_low": 0.0833,
+            "bin_high": 0.1667,
+            "mean_predicted": 0.10482,
+            "observed_frequency": 0.75,
+            "rows": 4,
+            "weighted_rows": 4.0
+          },
+          {
+            "bin_low": 0.1667,
+            "bin_high": 0.25,
+            "mean_predicted": 0.20929,
+            "observed_frequency": 0.5,
+            "rows": 2,
+            "weighted_rows": 2.0
+          },
+          {
+            "bin_low": 0.25,
+            "bin_high": 0.3333,
+            "mean_predicted": 0.30195,
+            "observed_frequency": 1.0,
+            "rows": 10,
+            "weighted_rows": 10.0
+          },
+          {
+            "bin_low": 0.3333,
+            "bin_high": 0.4167,
+            "mean_predicted": 0.38716,
+            "observed_frequency": 0.5,
+            "rows": 6,
+            "weighted_rows": 6.0
+          },
+          {
+            "bin_low": 0.4167,
+            "bin_high": 0.5,
+            "mean_predicted": 0.46179,
+            "observed_frequency": 0.89344,
+            "rows": 122,
+            "weighted_rows": 122.0
+          },
+          {
+            "bin_low": 0.5,
+            "bin_high": 0.5833,
+            "mean_predicted": 0.50506,
+            "observed_frequency": 0.99733,
+            "rows": 1870,
+            "weighted_rows": 1870.0
+          },
+          {
+            "bin_low": 0.5833,
+            "bin_high": 0.6667,
+            "mean_predicted": 0.63705,
+            "observed_frequency": 1.0,
+            "rows": 3,
+            "weighted_rows": 3.0
+          },
+          {
+            "bin_low": 0.6667,
+            "bin_high": 0.75,
+            "mean_predicted": 0.71011,
+            "observed_frequency": 1.0,
+            "rows": 4,
+            "weighted_rows": 4.0
+          },
+          {
+            "bin_low": 0.75,
+            "bin_high": 0.8333,
+            "mean_predicted": 0.82426,
+            "observed_frequency": 1.0,
+            "rows": 1,
+            "weighted_rows": 1.0
+          },
+          {
+            "bin_low": 0.8333,
+            "bin_high": 0.9167,
+            "mean_predicted": 0.86912,
+            "observed_frequency": 1.0,
+            "rows": 1,
+            "weighted_rows": 1.0
+          },
+          {
+            "bin_low": 0.9167,
+            "bin_high": 1.0,
+            "mean_predicted": 0.99999,
+            "observed_frequency": 0.99862,
+            "rows": 16618,
+            "weighted_rows": 16618.0
+          }
+        ],
+        "expected_calibration_error": 0.06692
+      },
+      "reliability_weighted_after_prior_shift": {
+        "bins": [
+          {
+            "bin_low": 0.0,
+            "bin_high": 0.0833,
+            "mean_predicted": 4e-05,
+            "observed_frequency": 6e-05,
+            "rows": 15501,
+            "weighted_rows": 19789410.75
+          },
+          {
+            "bin_low": 0.0833,
+            "bin_high": 0.1667,
+            "mean_predicted": 0.10606,
+            "observed_frequency": 0.00215,
+            "rows": 4,
+            "weighted_rows": 1394.18
+          },
+          {
+            "bin_low": 0.1667,
+            "bin_high": 0.25,
+            "mean_predicted": 0.19691,
+            "observed_frequency": 0.00072,
+            "rows": 2,
+            "weighted_rows": 1392.18
+          },
+          {
+            "bin_low": 0.25,
+            "bin_high": 0.3333,
+            "mean_predicted": 0.30195,
+            "observed_frequency": 1.0,
+            "rows": 10,
+            "weighted_rows": 10.0
+          },
+          {
+            "bin_low": 0.3333,
+            "bin_high": 0.4167,
+            "mean_predicted": 0.37856,
+            "observed_frequency": 0.00072,
+            "rows": 6,
+            "weighted_rows": 4176.54
+          },
+          {
+            "bin_low": 0.4167,
+            "bin_high": 0.5,
+            "mean_predicted": 0.46787,
+            "observed_frequency": 0.00599,
+            "rows": 122,
+            "weighted_rows": 18194.33
+          },
+          {
+            "bin_low": 0.5,
+            "bin_high": 0.5833,
+            "mean_predicted": 0.50237,
+            "observed_frequency": 0.21143,
+            "rows": 1870,
+            "weighted_rows": 8820.9
+          },
+          {
+            "bin_low": 0.5833,
+            "bin_high": 0.6667,
+            "mean_predicted": 0.63705,
+            "observed_frequency": 1.0,
+            "rows": 3,
+            "weighted_rows": 3.0
+          },
+          {
+            "bin_low": 0.6667,
+            "bin_high": 0.75,
+            "mean_predicted": 0.71011,
+            "observed_frequency": 1.0,
+            "rows": 4,
+            "weighted_rows": 4.0
+          },
+          {
+            "bin_low": 0.75,
+            "bin_high": 0.8333,
+            "mean_predicted": 0.82426,
+            "observed_frequency": 1.0,
+            "rows": 1,
+            "weighted_rows": 1.0
+          },
+          {
+            "bin_low": 0.8333,
+            "bin_high": 0.9167,
+            "mean_predicted": 0.86912,
+            "observed_frequency": 1.0,
+            "rows": 1,
+            "weighted_rows": 1.0
+          },
+          {
+            "bin_low": 0.9167,
+            "bin_high": 1.0,
+            "mean_predicted": 1.0,
+            "observed_frequency": 0.34152,
+            "rows": 16618,
+            "weighted_rows": 48592.12
+          }
+        ],
+        "expected_calibration_error": 0.00228
+      },
+      "prior_shift_note": "Prior shift uses the model's calibration target (or measured calibration prevalence), not the test-label prevalence. When calibration already targets the evaluation prior, this is the identity. It assumes stable class-conditional distributions.",
+      "constructed_test_set": {
+        "benign_rows": 14270,
+        "attack_rows_kept": 14,
+        "measured_prevalence": 0.00098,
+        "draws": 400,
+        "pr_auc_mean": 0.3228,
+        "pr_auc_std": 0.0362,
+        "pr_auc_min": 0.1751,
+        "pr_auc_max": 0.3784,
+        "limitation": "only 14 attack rows survive at this ratio, so per-class precision and recall are not estimable here and only the pooled attack against benign pr-auc is reported"
+      }
+    },
+    "candidate": {
+      "rows": 34142,
+      "false_positives": {
+        "benign_rows": 14270,
+        "attack_predictions": 4,
+        "rate": 0.0002803083391730904,
+        "basis": "Model argmax on benign feature observations, not live alert precision"
+      },
+      "natural_prevalence": 0.58204,
+      "constructed_prevalence": 0.001,
+      "benign_row_weight": 1391.179,
+      "pr_auc_attack_vs_benign": 0.8357,
+      "pr_auc_at_natural_prevalence": 0.999,
+      "pr_auc_per_class": {
+        "c2-beaconing": 0.1415,
+        "data-exfiltration": 0.7763,
+        "dga-dns-tunnelling": 0.9711,
+        "encrypted-malware": 0.6091,
+        "recon-scanning": 0.9973,
+        "volumetric-ddos": 0.9978
+      },
+      "per_class": {
+        "benign": {
+          "precision": 0.9999,
+          "recall": 0.9997,
+          "f1": 0.9998,
+          "weighted_support": 19852128.0,
+          "rows": 14270
+        },
+        "c2-beaconing": {
+          "precision": 0.2298,
+          "recall": 0.3827,
+          "f1": 0.2871,
+          "weighted_support": 2169.0,
+          "rows": 2169
+        },
+        "data-exfiltration": {
+          "precision": 0.9977,
+          "recall": 0.6353,
+          "f1": 0.7763,
+          "weighted_support": 680.0,
+          "rows": 680
+        },
+        "dga-dns-tunnelling": {
+          "precision": 0.7356,
+          "recall": 0.9997,
+          "f1": 0.8476,
+          "weighted_support": 3872.0,
+          "rows": 3872
+        },
+        "encrypted-malware": {
+          "precision": 1.0,
+          "recall": 0.5171,
+          "f1": 0.6817,
+          "weighted_support": 234.0,
+          "rows": 234
+        },
+        "recon-scanning": {
+          "precision": 1.0,
+          "recall": 0.994,
+          "f1": 0.997,
+          "weighted_support": 670.0,
+          "rows": 670
+        },
+        "volumetric-ddos": {
+          "precision": 0.897,
+          "recall": 0.9899,
+          "f1": 0.9411,
+          "weighted_support": 12247.0,
+          "rows": 12247
+        }
+      },
+      "per_class_at_natural_prevalence": {
+        "benign": {
+          "precision": 0.8865,
+          "recall": 0.9997,
+          "f1": 0.9397,
+          "weighted_support": 14270.0,
+          "rows": 14270
+        },
+        "c2-beaconing": {
+          "precision": 0.9976,
+          "recall": 0.3827,
+          "f1": 0.5531,
+          "weighted_support": 2169.0,
+          "rows": 2169
+        },
+        "data-exfiltration": {
+          "precision": 0.9977,
+          "recall": 0.6353,
+          "f1": 0.7763,
+          "weighted_support": 680.0,
+          "rows": 680
+        },
+        "dga-dns-tunnelling": {
+          "precision": 0.9997,
+          "recall": 0.9997,
+          "f1": 0.9997,
+          "weighted_support": 3872.0,
+          "rows": 3872
+        },
+        "encrypted-malware": {
+          "precision": 1.0,
+          "recall": 0.5171,
+          "f1": 0.6817,
+          "weighted_support": 234.0,
+          "rows": 234
+        },
+        "recon-scanning": {
+          "precision": 1.0,
+          "recall": 0.994,
+          "f1": 0.997,
+          "weighted_support": 670.0,
+          "rows": 670
+        },
+        "volumetric-ddos": {
+          "precision": 0.9998,
+          "recall": 0.9899,
+          "f1": 0.9948,
+          "weighted_support": 12247.0,
+          "rows": 12247
+        }
+      },
+      "macro_f1_attack_classes": 0.7551,
+      "ablation": {
+        "note": "rules only is the deterministic detector verdict, held for 300 seconds against the relevant subject of the flow it named. the hold matters: a rule raises one alert per episode and then goes quiet on its own cooldown, so scoring the bare fire against every row would report a recall near zero for a detector that in fact caught the attack. model only is the argmax of the calibrated tier-1 probability on its own. both is a row-level approximation, which is to let a held rule name the class and to let the model name a class alone only when it clears model_alert_confidence, has class-specific observed evidence, and the benign-only isolation forest calls the row unusual. The relevant subject is the destination for DDoS and source otherwise. DNS rules do not taint other clients of the resolver. Runtime allowlists, quotas, cooldowns and the minimum TreeSHAP-evidence count are not simulated here. Actual false alerts are measured separately by bench.false_positives.",
+        "model_alert_confidence": 0.99,
+        "rule_persistence_s": 300.0,
+        "macro_f1_attack_classes": {
+          "rules_only": 0.4743,
+          "model_only": 0.7551,
+          "both": 0.4821
+        },
+        "rules_only": {
+          "benign": {
+            "precision": 0.9997,
+            "recall": 0.9916,
+            "f1": 0.9956,
+            "weighted_support": 19852128.0,
+            "rows": 14270
+          },
+          "c2-beaconing": {
+            "precision": 0.0037,
+            "recall": 0.0904,
+            "f1": 0.0071,
+            "weighted_support": 2169.0,
+            "rows": 2169
+          },
+          "data-exfiltration": {
+            "precision": 0.0155,
+            "recall": 0.225,
+            "f1": 0.0289,
+            "weighted_support": 680.0,
+            "rows": 680
+          },
+          "dga-dns-tunnelling": {
+            "precision": 0.0344,
+            "recall": 0.9613,
+            "f1": 0.0665,
+            "weighted_support": 3872.0,
+            "rows": 3872
+          },
+          "encrypted-malware": {
+            "precision": 1.0,
+            "recall": 0.9615,
+            "f1": 0.9804,
+            "weighted_support": 234.0,
+            "rows": 234
+          },
+          "recon-scanning": {
+            "precision": 1.0,
+            "recall": 0.8164,
+            "f1": 0.8989,
+            "weighted_support": 670.0,
+            "rows": 670
+          },
+          "volumetric-ddos": {
+            "precision": 1.0,
+            "recall": 0.7609,
+            "f1": 0.8642,
+            "weighted_support": 12247.0,
+            "rows": 12247
+          }
+        },
+        "model_only": {
+          "benign": {
+            "precision": 0.9999,
+            "recall": 0.9997,
+            "f1": 0.9998,
+            "weighted_support": 19852128.0,
+            "rows": 14270
+          },
+          "c2-beaconing": {
+            "precision": 0.2298,
+            "recall": 0.3827,
+            "f1": 0.2871,
+            "weighted_support": 2169.0,
+            "rows": 2169
+          },
+          "data-exfiltration": {
+            "precision": 0.9977,
+            "recall": 0.6353,
+            "f1": 0.7763,
+            "weighted_support": 680.0,
+            "rows": 680
+          },
+          "dga-dns-tunnelling": {
+            "precision": 0.7356,
+            "recall": 0.9997,
+            "f1": 0.8476,
+            "weighted_support": 3872.0,
+            "rows": 3872
+          },
+          "encrypted-malware": {
+            "precision": 1.0,
+            "recall": 0.5171,
+            "f1": 0.6817,
+            "weighted_support": 234.0,
+            "rows": 234
+          },
+          "recon-scanning": {
+            "precision": 1.0,
+            "recall": 0.994,
+            "f1": 0.997,
+            "weighted_support": 670.0,
+            "rows": 670
+          },
+          "volumetric-ddos": {
+            "precision": 0.897,
+            "recall": 0.9899,
+            "f1": 0.9411,
+            "weighted_support": 12247.0,
+            "rows": 12247
+          }
+        },
+        "both": {
+          "benign": {
+            "precision": 0.9997,
+            "recall": 0.9916,
+            "f1": 0.9956,
+            "weighted_support": 19852128.0,
+            "rows": 14270
+          },
+          "c2-beaconing": {
+            "precision": 0.0037,
+            "recall": 0.0904,
+            "f1": 0.0071,
+            "weighted_support": 2169.0,
+            "rows": 2169
+          },
+          "data-exfiltration": {
+            "precision": 0.0159,
+            "recall": 0.2309,
+            "f1": 0.0297,
+            "weighted_support": 680.0,
+            "rows": 680
+          },
+          "dga-dns-tunnelling": {
+            "precision": 0.0345,
+            "recall": 0.9641,
+            "f1": 0.0667,
+            "weighted_support": 3872.0,
+            "rows": 3872
+          },
+          "encrypted-malware": {
+            "precision": 1.0,
+            "recall": 0.9615,
+            "f1": 0.9804,
+            "weighted_support": 234.0,
+            "rows": 234
+          },
+          "recon-scanning": {
+            "precision": 1.0,
+            "recall": 0.891,
+            "f1": 0.9424,
+            "weighted_support": 670.0,
+            "rows": 670
+          },
+          "volumetric-ddos": {
+            "precision": 1.0,
+            "recall": 0.7639,
+            "f1": 0.8661,
+            "weighted_support": 12247.0,
+            "rows": 12247
+          }
+        }
+      },
+      "reliability_weighted": {
+        "bins": [
+          {
+            "bin_low": 0.0,
+            "bin_high": 0.0833,
+            "mean_predicted": 0.0001,
+            "observed_frequency": 7e-05,
+            "rows": 15663,
+            "weighted_rows": 19843789.75
+          },
+          {
+            "bin_low": 0.0833,
+            "bin_high": 0.1667,
+            "mean_predicted": 0.11085,
+            "observed_frequency": 0.06956,
+            "rows": 315,
+            "weighted_rows": 4485.54
+          },
+          {
+            "bin_low": 0.1667,
+            "bin_high": 0.25,
+            "mean_predicted": 0.20281,
+            "observed_frequency": 1.0,
+            "rows": 1,
+            "weighted_rows": 1.0
+          },
+          {
+            "bin_low": 0.3333,
+            "bin_high": 0.4167,
+            "mean_predicted": 0.39608,
+            "observed_frequency": 1.0,
+            "rows": 11,
+            "weighted_rows": 11.0
+          },
+          {
+            "bin_low": 0.4167,
+            "bin_high": 0.5,
+            "mean_predicted": 0.4893,
+            "observed_frequency": 1.0,
+            "rows": 103,
+            "weighted_rows": 103.0
+          },
+          {
+            "bin_low": 0.5,
+            "bin_high": 0.5833,
+            "mean_predicted": 0.51032,
+            "observed_frequency": 0.37769,
+            "rows": 2536,
+            "weighted_rows": 6706.54
+          },
+          {
+            "bin_low": 0.5833,
+            "bin_high": 0.6667,
+            "mean_predicted": 0.63867,
+            "observed_frequency": 1.0,
+            "rows": 5551,
+            "weighted_rows": 5551.0
+          },
+          {
+            "bin_low": 0.9167,
+            "bin_high": 1.0,
+            "mean_predicted": 1.0,
+            "observed_frequency": 0.87745,
+            "rows": 9962,
+            "weighted_rows": 11352.18
+          }
+        ],
+        "expected_calibration_error": 0.00026
+      },
+      "reliability_natural": {
+        "bins": [
+          {
+            "bin_low": 0.0,
+            "bin_high": 0.0833,
+            "mean_predicted": 0.00172,
+            "observed_frequency": 0.08938,
+            "rows": 15663,
+            "weighted_rows": 15663.0
+          },
+          {
+            "bin_low": 0.0833,
+            "bin_high": 0.1667,
+            "mean_predicted": 0.10918,
+            "observed_frequency": 0.99048,
+            "rows": 315,
+            "weighted_rows": 315.0
+          },
+          {
+            "bin_low": 0.1667,
+            "bin_high": 0.25,
+            "mean_predicted": 0.20281,
+            "observed_frequency": 1.0,
+            "rows": 1,
+            "weighted_rows": 1.0
+          },
+          {
+            "bin_low": 0.3333,
+            "bin_high": 0.4167,
+            "mean_predicted": 0.39608,
+            "observed_frequency": 1.0,
+            "rows": 11,
+            "weighted_rows": 11.0
+          },
+          {
+            "bin_low": 0.4167,
+            "bin_high": 0.5,
+            "mean_predicted": 0.4893,
+            "observed_frequency": 1.0,
+            "rows": 103,
+            "weighted_rows": 103.0
+          },
+          {
+            "bin_low": 0.5,
+            "bin_high": 0.5833,
+            "mean_predicted": 0.51544,
+            "observed_frequency": 0.99882,
+            "rows": 2536,
+            "weighted_rows": 2536.0
+          },
+          {
+            "bin_low": 0.5833,
+            "bin_high": 0.6667,
+            "mean_predicted": 0.63867,
+            "observed_frequency": 1.0,
+            "rows": 5551,
+            "weighted_rows": 5551.0
+          },
+          {
+            "bin_low": 0.9167,
+            "bin_high": 1.0,
+            "mean_predicted": 1.0,
+            "observed_frequency": 0.9999,
+            "rows": 9962,
+            "weighted_rows": 9962.0
+          }
+        ],
+        "expected_calibration_error": 0.14479
+      },
+      "reliability_weighted_after_prior_shift": {
+        "bins": [
+          {
+            "bin_low": 0.0,
+            "bin_high": 0.0833,
+            "mean_predicted": 0.0001,
+            "observed_frequency": 7e-05,
+            "rows": 15663,
+            "weighted_rows": 19843789.75
+          },
+          {
+            "bin_low": 0.0833,
+            "bin_high": 0.1667,
+            "mean_predicted": 0.11085,
+            "observed_frequency": 0.06956,
+            "rows": 315,
+            "weighted_rows": 4485.54
+          },
+          {
+            "bin_low": 0.1667,
+            "bin_high": 0.25,
+            "mean_predicted": 0.20281,
+            "observed_frequency": 1.0,
+            "rows": 1,
+            "weighted_rows": 1.0
+          },
+          {
+            "bin_low": 0.3333,
+            "bin_high": 0.4167,
+            "mean_predicted": 0.39608,
+            "observed_frequency": 1.0,
+            "rows": 11,
+            "weighted_rows": 11.0
+          },
+          {
+            "bin_low": 0.4167,
+            "bin_high": 0.5,
+            "mean_predicted": 0.4893,
+            "observed_frequency": 1.0,
+            "rows": 103,
+            "weighted_rows": 103.0
+          },
+          {
+            "bin_low": 0.5,
+            "bin_high": 0.5833,
+            "mean_predicted": 0.51032,
+            "observed_frequency": 0.37769,
+            "rows": 2536,
+            "weighted_rows": 6706.54
+          },
+          {
+            "bin_low": 0.5833,
+            "bin_high": 0.6667,
+            "mean_predicted": 0.63867,
+            "observed_frequency": 1.0,
+            "rows": 5551,
+            "weighted_rows": 5551.0
+          },
+          {
+            "bin_low": 0.9167,
+            "bin_high": 1.0,
+            "mean_predicted": 1.0,
+            "observed_frequency": 0.87745,
+            "rows": 9962,
+            "weighted_rows": 11352.18
+          }
+        ],
+        "expected_calibration_error": 0.00026
+      },
+      "prior_shift_note": "Prior shift uses the model's calibration target (or measured calibration prevalence), not the test-label prevalence. When calibration already targets the evaluation prior, this is the identity. It assumes stable class-conditional distributions.",
+      "constructed_test_set": {
+        "benign_rows": 14270,
+        "attack_rows_kept": 14,
+        "measured_prevalence": 0.00098,
+        "draws": 400,
+        "pr_auc_mean": 0.8368,
+        "pr_auc_std": 0.0535,
+        "pr_auc_min": 0.6361,
+        "pr_auc_max": 0.9247,
+        "limitation": "only 14 attack rows survive at this ratio, so per-class precision and recall are not estimable here and only the pooled attack against benign pr-auc is reported"
+      }
+    }
+  }
+}

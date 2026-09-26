@@ -1,0 +1,22 @@
+#!/usr/sbin/nft -f
+# Reference host policy. Interface names and maintenance sources require site review.
+flush ruleset
+table inet anveshak {
+  chain input {
+    type filter hook input priority 0; policy drop;
+    iifname "lo" accept
+    ct state established,related accept
+    iifname "lan40" ip saddr 10.10.40.101-10.10.40.110 tcp dport 8443 accept
+    # Local DNS/NTP are hosted on 10.10.40.53, not this application host.
+  }
+  chain forward {
+    type filter hook forward priority 0; policy drop;
+  }
+  chain output {
+    type filter hook output priority 0; policy drop;
+    oifname "lo" accept
+    ct state established,related accept
+    oifname "lan40" ip daddr 10.10.40.53 udp dport {53,123} accept
+    oifname "lan40" ip daddr 10.10.40.53 tcp dport 53 accept
+  }
+}

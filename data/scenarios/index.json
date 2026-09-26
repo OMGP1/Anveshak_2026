@@ -1,0 +1,112 @@
+{
+  "beacon_jitter": {
+    "bytes": 3461275,
+    "duration_s": 3585.77872,
+    "flow_records": 1870,
+    "flow_size": 165384,
+    "packets": 11150,
+    "pcap_sha256": "b806dc9ee4331027f40a22d7d5368ec23e53b44f04b1cf1952b3feb5a1aa6555",
+    "pcap_size": 3795799,
+    "seed": 26145005
+  },
+  "benign": {
+    "bytes": 3436575,
+    "duration_s": 300.952664,
+    "flow_records": 1200,
+    "flow_size": 105902,
+    "packets": 8150,
+    "pcap_sha256": "5354ec703ae301d29a5fbbc74400883047326bef9a3edae2cd2a3d337187d22f",
+    "pcap_size": 3681099,
+    "seed": 26145001
+  },
+  "dga_burst": {
+    "bytes": 2901916,
+    "duration_s": 598.012859,
+    "flow_records": 2770,
+    "flow_size": 236636,
+    "packets": 8263,
+    "pcap_sha256": "d2cb64a5cfd5a30d1cc2dd708b6747c19c1143c6e66f31ba448449fa91ada475",
+    "pcap_size": 3149830,
+    "seed": 26145006
+  },
+  "dns_tunnel": {
+    "bytes": 3559609,
+    "duration_s": 597.493274,
+    "flow_records": 5092,
+    "flow_size": 435291,
+    "packets": 9504,
+    "pcap_sha256": "b44bf5838d9be5b69e9cfb199293f53c102dca0d710287ba52fc83830580c48b",
+    "pcap_size": 3844753,
+    "seed": 26145007
+  },
+  "exfil_bulk": {
+    "bytes": 6344223,
+    "duration_s": 881.820278,
+    "flow_records": 250,
+    "flow_size": 22283,
+    "packets": 6525,
+    "pcap_sha256": "0e5a3a1893566257565a53729e29a8e8953a62cc2d15406f411e314ff556c8fb",
+    "pcap_size": 6539997,
+    "seed": 26145011
+  },
+  "exfil_drip": {
+    "bytes": 3317324,
+    "duration_s": 1782.004712,
+    "flow_records": 866,
+    "flow_size": 77007,
+    "packets": 6569,
+    "pcap_sha256": "2a095f0d5d5331ab77d8e9472a42cd892bae7641c23e6a18b08f4333716a83c8",
+    "pcap_size": 3514418,
+    "seed": 26145010
+  },
+  "ja4_spoof": {
+    "bytes": 3396416,
+    "duration_s": 598.690382,
+    "flow_records": 1044,
+    "flow_size": 92700,
+    "packets": 7873,
+    "pcap_sha256": "1dabe263c5a6b3fbd545a5469f7958f671133d1f3c789c45f0c270358341c3da",
+    "pcap_size": 3632630,
+    "seed": 26145008
+  },
+  "port_scan": {
+    "bytes": 3424043,
+    "duration_s": 596.693356,
+    "flow_records": 3794,
+    "flow_size": 331616,
+    "packets": 10194,
+    "pcap_sha256": "191e326d67b77ea9c50e9294f7a1c76d3263ad77a69c0624389171e0e26a9ec0",
+    "pcap_size": 3729887,
+    "seed": 26145009
+  },
+  "slowloris": {
+    "bytes": 2612572,
+    "duration_s": 599.288023,
+    "flow_records": 3703,
+    "flow_size": 326832,
+    "packets": 15756,
+    "pcap_sha256": "1dc4c5b8eb37a8479f0acbadf2bc9a8dcdfad022aec6d86acad2ced5ff13201c",
+    "pcap_size": 3085276,
+    "seed": 26145004
+  },
+  "syn_flood": {
+    "bytes": 1623018,
+    "duration_s": 178.961896,
+    "flow_records": 10848,
+    "flow_size": 958875,
+    "packets": 13100,
+    "pcap_sha256": "7673e1e6ff3b28e8418192f833a464dcbb01a717e2020dbccb863d5593ebdda4",
+    "pcap_size": 2016042,
+    "seed": 26145002
+  },
+  "udp_reflection": {
+    "bytes": 3079639,
+    "duration_s": 176.060753,
+    "flow_records": 562,
+    "flow_size": 49937,
+    "packets": 8058,
+    "pcap_sha256": "2f4edcde0cb023ee9c0d4de82ec6e011322583d89569176edd7cef678b3a7e71",
+    "pcap_size": 3321403,
+    "seed": 26145003
+  }
+}

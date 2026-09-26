@@ -1,0 +1,10 @@
+{
+  "observations": 34142,
+  "forest_trees": 500,
+  "raw_scores_exactly_equal": true,
+  "max_raw_difference": 0.0,
+  "percentiles_exactly_equal": true,
+  "reference_batched_seconds": 0.5705329000484198,
+  "optimized_individual_seconds": 1.8066243000794202,
+  "cache_bytes": 1782088
+}

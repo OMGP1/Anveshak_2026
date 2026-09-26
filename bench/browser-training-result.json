@@ -1,0 +1,548 @@
+{
+  "state": "candidate_rejected",
+  "dataset_sha256": "sha256:cea4c5c89bcb7dd9f86cb8b08d1ce8d239367f7b7b363e7ba0af887c26a0a643",
+  "model_hash": "sha256:7239fb9d67d45f18e9ffd2c3bde7f9e8ceb1632617bfb6194c149cac787f430c",
+  "profile": "quality-candidate-v1",
+  "gates": {
+    "passed": false,
+    "failures": [
+      "c2-beaconing: precision 0.007 below 0.95",
+      "data-exfiltration: precision 0.013 below 0.95",
+      "data-exfiltration: recall 0.8357 below 0.9",
+      "dga-dns-tunnelling: precision 0.2477 below 0.95",
+      "encrypted-malware: precision 0.0281 below 0.95",
+      "encrypted-malware: recall 0.4324 below 0.9",
+      "encrypted-malware: insufficient independent test rows",
+      "recon-scanning: recall 0.6343 below 0.9",
+      "Independent labelled real-traffic holdout is absent"
+    ],
+    "automatic_promotion": false
+  },
+  "evaluation": {
+    "rows": 11731,
+    "natural_prevalence": 0.525445,
+    "constructed_prevalence": 0.001,
+    "benign_row_weight": 1106.132,
+    "pr_auc_attack_vs_benign": 0.198,
+    "pr_auc_at_natural_prevalence": 0.9897,
+    "pr_auc_per_class": {
+      "c2-beaconing": 0.3764,
+      "data-exfiltration": 0.0121,
+      "dga-dns-tunnelling": 0.891,
+      "encrypted-malware": 0.3543,
+      "recon-scanning": 0.6354,
+      "volumetric-ddos": 1.0
+    },
+    "per_class": {
+      "benign": {
+        "precision": 1.0,
+        "recall": 0.981,
+        "f1": 0.9904,
+        "weighted_support": 6157836.0,
+        "rows": 5567
+      },
+      "c2-beaconing": {
+        "precision": 0.007,
+        "recall": 0.9161,
+        "f1": 0.0139,
+        "weighted_support": 715.0,
+        "rows": 715
+      },
+      "data-exfiltration": {
+        "precision": 0.013,
+        "recall": 0.8357,
+        "f1": 0.0257,
+        "weighted_support": 280.0,
+        "rows": 280
+      },
+      "dga-dns-tunnelling": {
+        "precision": 0.2477,
+        "recall": 0.9978,
+        "f1": 0.3969,
+        "weighted_support": 1825.0,
+        "rows": 1825
+      },
+      "encrypted-malware": {
+        "precision": 0.0281,
+        "recall": 0.4324,
+        "f1": 0.0528,
+        "weighted_support": 74.0,
+        "rows": 74
+      },
+      "recon-scanning": {
+        "precision": 1.0,
+        "recall": 0.6343,
+        "f1": 0.7762,
+        "weighted_support": 391.0,
+        "rows": 391
+      },
+      "volumetric-ddos": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "weighted_support": 2879.0,
+        "rows": 2879
+      }
+    },
+    "per_class_at_natural_prevalence": {
+      "benign": {
+        "precision": 0.9536,
+        "recall": 0.981,
+        "f1": 0.9671,
+        "weighted_support": 5567.0,
+        "rows": 5567
+      },
+      "c2-beaconing": {
+        "precision": 0.8529,
+        "recall": 0.9161,
+        "f1": 0.8833,
+        "weighted_support": 715.0,
+        "rows": 715
+      },
+      "data-exfiltration": {
+        "precision": 0.936,
+        "recall": 0.8357,
+        "f1": 0.883,
+        "weighted_support": 280.0,
+        "rows": 280
+      },
+      "dga-dns-tunnelling": {
+        "precision": 0.9973,
+        "recall": 0.9978,
+        "f1": 0.9975,
+        "weighted_support": 1825.0,
+        "rows": 1825
+      },
+      "encrypted-malware": {
+        "precision": 0.9697,
+        "recall": 0.4324,
+        "f1": 0.5981,
+        "weighted_support": 74.0,
+        "rows": 74
+      },
+      "recon-scanning": {
+        "precision": 1.0,
+        "recall": 0.6343,
+        "f1": 0.7762,
+        "weighted_support": 391.0,
+        "rows": 391
+      },
+      "volumetric-ddos": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "weighted_support": 2879.0,
+        "rows": 2879
+      }
+    },
+    "macro_f1_attack_classes": 0.3776,
+    "ablation": {
+      "note": "rules only is the deterministic detector verdict, held for 300 seconds against both endpoints of the flow it named. the hold matters: a rule raises one alert per episode and then goes quiet on its own cooldown, so scoring the bare fire against every row would report a recall near zero for a detector that in fact caught the attack. model only is the argmax of the calibrated tier-1 probability on its own. both is what the engine actually does, which is to let a held rule name the class and to let the model name a class alone only when it clears model_alert_confidence and the benign-only isolation forest also calls the row unusual. one artefact of holding the verdict against both endpoints is worth naming: a dns rule that names a host and its resolver marks the resolver too, so every other host querying that resolver in the next window counts as a rules positive and the rules-only precision for the dns class is understated by that spill",
+      "model_alert_confidence": 0.99,
+      "rule_persistence_s": 300.0,
+      "macro_f1_attack_classes": {
+        "rules_only": 0.2566,
+        "model_only": 0.3776,
+        "both": 0.3186
+      },
+      "rules_only": {
+        "benign": {
+          "precision": 0.9992,
+          "recall": 0.966,
+          "f1": 0.9824,
+          "weighted_support": 6157836.0,
+          "rows": 5567
+        },
+        "c2-beaconing": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "weighted_support": 715.0,
+          "rows": 715
+        },
+        "data-exfiltration": {
+          "precision": 0.0095,
+          "recall": 0.1893,
+          "f1": 0.0181,
+          "weighted_support": 280.0,
+          "rows": 280
+        },
+        "dga-dns-tunnelling": {
+          "precision": 0.0057,
+          "recall": 0.6411,
+          "f1": 0.0113,
+          "weighted_support": 1825.0,
+          "rows": 1825
+        },
+        "encrypted-malware": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6667,
+          "weighted_support": 74.0,
+          "rows": 74
+        },
+        "recon-scanning": {
+          "precision": 1.0,
+          "recall": 0.7289,
+          "f1": 0.8432,
+          "weighted_support": 391.0,
+          "rows": 391
+        },
+        "volumetric-ddos": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "weighted_support": 2879.0,
+          "rows": 2879
+        }
+      },
+      "model_only": {
+        "benign": {
+          "precision": 1.0,
+          "recall": 0.981,
+          "f1": 0.9904,
+          "weighted_support": 6157836.0,
+          "rows": 5567
+        },
+        "c2-beaconing": {
+          "precision": 0.007,
+          "recall": 0.9161,
+          "f1": 0.0139,
+          "weighted_support": 715.0,
+          "rows": 715
+        },
+        "data-exfiltration": {
+          "precision": 0.013,
+          "recall": 0.8357,
+          "f1": 0.0257,
+          "weighted_support": 280.0,
+          "rows": 280
+        },
+        "dga-dns-tunnelling": {
+          "precision": 0.2477,
+          "recall": 0.9978,
+          "f1": 0.3969,
+          "weighted_support": 1825.0,
+          "rows": 1825
+        },
+        "encrypted-malware": {
+          "precision": 0.0281,
+          "recall": 0.4324,
+          "f1": 0.0528,
+          "weighted_support": 74.0,
+          "rows": 74
+        },
+        "recon-scanning": {
+          "precision": 1.0,
+          "recall": 0.6343,
+          "f1": 0.7762,
+          "weighted_support": 391.0,
+          "rows": 391
+        },
+        "volumetric-ddos": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "weighted_support": 2879.0,
+          "rows": 2879
+        }
+      },
+      "both": {
+        "benign": {
+          "precision": 0.9994,
+          "recall": 0.9635,
+          "f1": 0.9811,
+          "weighted_support": 6157836.0,
+          "rows": 5567
+        },
+        "c2-beaconing": {
+          "precision": 0.0959,
+          "recall": 0.3287,
+          "f1": 0.1485,
+          "weighted_support": 715.0,
+          "rows": 715
+        },
+        "data-exfiltration": {
+          "precision": 0.0113,
+          "recall": 0.7679,
+          "f1": 0.0223,
+          "weighted_support": 280.0,
+          "rows": 280
+        },
+        "dga-dns-tunnelling": {
+          "precision": 0.0069,
+          "recall": 0.7764,
+          "f1": 0.0137,
+          "weighted_support": 1825.0,
+          "rows": 1825
+        },
+        "encrypted-malware": {
+          "precision": 1.0,
+          "recall": 0.5,
+          "f1": 0.6667,
+          "weighted_support": 74.0,
+          "rows": 74
+        },
+        "recon-scanning": {
+          "precision": 1.0,
+          "recall": 0.8159,
+          "f1": 0.8986,
+          "weighted_support": 391.0,
+          "rows": 391
+        },
+        "volumetric-ddos": {
+          "precision": 1.0,
+          "recall": 0.0882,
+          "f1": 0.1621,
+          "weighted_support": 2879.0,
+          "rows": 2879
+        }
+      }
+    },
+    "reliability_weighted": {
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.0833,
+          "mean_predicted": 0.00845,
+          "observed_frequency": 3e-05,
+          "rows": 5314,
+          "weighted_rows": 5672430.12
+        },
+        {
+          "bin_low": 0.0833,
+          "bin_high": 0.1667,
+          "mean_predicted": 0.09973,
+          "observed_frequency": 8e-05,
+          "rows": 133,
+          "weighted_rows": 134959.09
+        },
+        {
+          "bin_low": 0.1667,
+          "bin_high": 0.25,
+          "mean_predicted": 0.20876,
+          "observed_frequency": 7e-05,
+          "rows": 71,
+          "weighted_rows": 73009.7
+        },
+        {
+          "bin_low": 0.25,
+          "bin_high": 0.3333,
+          "mean_predicted": 0.27555,
+          "observed_frequency": 0.00032,
+          "rows": 53,
+          "weighted_rows": 43153.14
+        },
+        {
+          "bin_low": 0.3333,
+          "bin_high": 0.4167,
+          "mean_predicted": 0.37225,
+          "observed_frequency": 0.00026,
+          "rows": 58,
+          "weighted_rows": 49788.93
+        },
+        {
+          "bin_low": 0.4167,
+          "bin_high": 0.5,
+          "mean_predicted": 0.44238,
+          "observed_frequency": 0.00056,
+          "rows": 86,
+          "weighted_rows": 58657.99
+        },
+        {
+          "bin_low": 0.5,
+          "bin_high": 0.5833,
+          "mean_predicted": 0.53446,
+          "observed_frequency": 0.00125,
+          "rows": 62,
+          "weighted_rows": 28795.43
+        },
+        {
+          "bin_low": 0.5833,
+          "bin_high": 0.6667,
+          "mean_predicted": 0.61707,
+          "observed_frequency": 0.00229,
+          "rows": 92,
+          "weighted_rows": 28825.43
+        },
+        {
+          "bin_low": 0.6667,
+          "bin_high": 0.75,
+          "mean_predicted": 0.69582,
+          "observed_frequency": 0.00707,
+          "rows": 71,
+          "weighted_rows": 8912.05
+        },
+        {
+          "bin_low": 0.75,
+          "bin_high": 0.8333,
+          "mean_predicted": 0.77631,
+          "observed_frequency": 0.00949,
+          "rows": 116,
+          "weighted_rows": 11167.32
+        },
+        {
+          "bin_low": 0.8333,
+          "bin_high": 0.9167,
+          "mean_predicted": 0.86015,
+          "observed_frequency": 0.00896,
+          "rows": 66,
+          "weighted_rows": 6696.79
+        },
+        {
+          "bin_low": 0.9167,
+          "bin_high": 1.0,
+          "mean_predicted": 0.97478,
+          "observed_frequency": 0.11703,
+          "rows": 5609,
+          "weighted_rows": 47604.01
+        }
+      ],
+      "expected_calibration_error": 0.03684
+    },
+    "reliability_natural": {
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.0833,
+          "mean_predicted": 0.0087,
+          "observed_frequency": 0.035,
+          "rows": 5314,
+          "weighted_rows": 5314.0
+        },
+        {
+          "bin_low": 0.0833,
+          "bin_high": 0.1667,
+          "mean_predicted": 0.10177,
+          "observed_frequency": 0.08271,
+          "rows": 133,
+          "weighted_rows": 133.0
+        },
+        {
+          "bin_low": 0.1667,
+          "bin_high": 0.25,
+          "mean_predicted": 0.20814,
+          "observed_frequency": 0.07042,
+          "rows": 71,
+          "weighted_rows": 71.0
+        },
+        {
+          "bin_low": 0.25,
+          "bin_high": 0.3333,
+          "mean_predicted": 0.27814,
+          "observed_frequency": 0.26415,
+          "rows": 53,
+          "weighted_rows": 53.0
+        },
+        {
+          "bin_low": 0.3333,
+          "bin_high": 0.4167,
+          "mean_predicted": 0.37118,
+          "observed_frequency": 0.22414,
+          "rows": 58,
+          "weighted_rows": 58.0
+        },
+        {
+          "bin_low": 0.4167,
+          "bin_high": 0.5,
+          "mean_predicted": 0.44619,
+          "observed_frequency": 0.38372,
+          "rows": 86,
+          "weighted_rows": 86.0
+        },
+        {
+          "bin_low": 0.5,
+          "bin_high": 0.5833,
+          "mean_predicted": 0.53323,
+          "observed_frequency": 0.58065,
+          "rows": 62,
+          "weighted_rows": 62.0
+        },
+        {
+          "bin_low": 0.5833,
+          "bin_high": 0.6667,
+          "mean_predicted": 0.61187,
+          "observed_frequency": 0.71739,
+          "rows": 92,
+          "weighted_rows": 92.0
+        },
+        {
+          "bin_low": 0.6667,
+          "bin_high": 0.75,
+          "mean_predicted": 0.71066,
+          "observed_frequency": 0.88732,
+          "rows": 71,
+          "weighted_rows": 71.0
+        },
+        {
+          "bin_low": 0.75,
+          "bin_high": 0.8333,
+          "mean_predicted": 0.78633,
+          "observed_frequency": 0.91379,
+          "rows": 116,
+          "weighted_rows": 116.0
+        },
+        {
+          "bin_low": 0.8333,
+          "bin_high": 0.9167,
+          "mean_predicted": 0.86659,
+          "observed_frequency": 0.90909,
+          "rows": 66,
+          "weighted_rows": 66.0
+        },
+        {
+          "bin_low": 0.9167,
+          "bin_high": 1.0,
+          "mean_predicted": 0.99481,
+          "observed_frequency": 0.99323,
+          "rows": 5609,
+          "weighted_rows": 5609.0
+        }
+      ],
+      "expected_calibration_error": 0.01861
+    },
+    "reliability_weighted_after_prior_shift": {
+      "bins": [
+        {
+          "bin_low": 0.0,
+          "bin_high": 0.0833,
+          "mean_predicted": 0.00013,
+          "observed_frequency": 0.00019,
+          "rows": 6722,
+          "weighted_rows": 6139098.63
+        },
+        {
+          "bin_low": 0.0833,
+          "bin_high": 0.1667,
+          "mean_predicted": 0.09251,
+          "observed_frequency": 0.10637,
+          "rows": 398,
+          "weighted_rows": 3713.4
+        },
+        {
+          "bin_low": 0.9167,
+          "bin_high": 1.0,
+          "mean_predicted": 1.0,
+          "observed_frequency": 0.21692,
+          "rows": 4611,
+          "weighted_rows": 21187.98
+        }
+      ],
+      "expected_calibration_error": 0.00276
+    },
+    "prior_shift_note": "isotonic was fitted at the calibration slice prevalence, so at a prior a thousand times lower the same probability systematically overstates risk. the standard prior shift on the odds restores it, and both curves are drawn so the claim is visible rather than asserted",
+    "constructed_test_set": {
+      "benign_rows": 5567,
+      "attack_rows_kept": 6,
+      "measured_prevalence": 0.001077,
+      "draws": 400,
+      "pr_auc_mean": 0.2167,
+      "pr_auc_std": 0.0495,
+      "pr_auc_min": 0.0739,
+      "pr_auc_max": 0.2857,
+      "limitation": "only 6 attack rows survive at this ratio, so per-class precision and recall are not estimable here and only the pooled attack against benign pr-auc is reported"
+    }
+  },
+  "serving_model_changed": false,
+  "evaluation_note": "Strict temporal synthetic holdout. Row metrics are not live alert precision."
+}

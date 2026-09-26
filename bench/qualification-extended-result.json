@@ -1,0 +1,18 @@
+{
+  "scope": "Local mixed-synthetic engine plus durable-ledger qualification, not full-stack production certification",
+  "passed": false,
+  "checks": {
+    "duration": true,
+    "sustained_rate": false,
+    "latency_p99": true,
+    "python_memory": false,
+    "native_source": true,
+    "durable_ledger": true,
+    "models_enabled": true
+  },
+  "failed_checks": [
+    "sustained_rate",
+    "python_memory"
+  ],
+  "production_certified": false
+}

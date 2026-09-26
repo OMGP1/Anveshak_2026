@@ -1,0 +1,92 @@
+{
+  "scope": "Training observations only. Missing minimum evidence is diagnostic and does not change labels or remove difficult evaluation rows.",
+  "rows": 13843,
+  "conflicting_feature_groups": 11,
+  "rows_in_conflicting_groups": 2042,
+  "unavoidable_training_errors_for_identical_vectors": 31,
+  "per_class": {
+    "c2-beaconing": {
+      "rows": 920,
+      "minimum_evidence_present": 83,
+      "minimum_evidence_absent": 837,
+      "fresh_features": {
+        "encrypted": 380,
+        "ddos": 246,
+        "ddos|scan": 93,
+        "ddos|scan|exfil": 83,
+        "": 83,
+        "ddos|encrypted": 14,
+        "scan|exfil": 11,
+        "scan": 10
+      }
+    },
+    "data-exfiltration": {
+      "rows": 327,
+      "minimum_evidence_present": 7,
+      "minimum_evidence_absent": 320,
+      "fresh_features": {
+        "ddos": 162,
+        "encrypted": 107,
+        "ddos|scan": 29,
+        "ddos|encrypted": 15,
+        "ddos|scan|exfil": 9,
+        "scan": 3,
+        "ddos|exfil": 1,
+        "ddos|encrypted|exfil": 1
+      }
+    },
+    "dga-dns-tunnelling": {
+      "rows": 1567,
+      "minimum_evidence_present": 1185,
+      "minimum_evidence_absent": 382,
+      "fresh_features": {
+        "dga": 758,
+        "ddos": 381,
+        "ddos|dga|scan": 294,
+        "dga|scan": 123,
+        "ddos|dga|scan|exfil": 8,
+        "ddos|dga": 3
+      }
+    },
+    "encrypted-malware": {
+      "rows": 104,
+      "minimum_evidence_present": 51,
+      "minimum_evidence_absent": 53,
+      "fresh_features": {
+        "encrypted": 46,
+        "ddos": 36,
+        "ddos|scan": 10,
+        "ddos|encrypted": 5,
+        "ddos|scan|exfil": 4,
+        "scan": 3
+      }
+    },
+    "recon-scanning": {
+      "rows": 208,
+      "minimum_evidence_present": 113,
+      "minimum_evidence_absent": 95,
+      "fresh_features": {
+        "ddos|scan": 104,
+        "ddos": 91,
+        "scan": 11,
+        "ddos|scan|exfil": 2
+      }
+    },
+    "volumetric-ddos": {
+      "rows": 4599,
+      "minimum_evidence_present": 36,
+      "minimum_evidence_absent": 4563,
+      "fresh_features": {
+        "scan": 2936,
+        "ddos": 1184,
+        "ddos|dga": 314,
+        "dga": 85,
+        "ddos|scan": 51,
+        "exfil": 18,
+        "scan|exfil": 9,
+        "dga|scan": 1,
+        "ddos|exfil": 1
+      }
+    }
+  }
+}

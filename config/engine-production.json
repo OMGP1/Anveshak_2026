@@ -1,0 +1,35 @@
+{
+  "pcap_backend": "rust",
+  "flow_capacity": 200000,
+  "flow_idle_timeout_s": 120,
+  "model_enabled": true,
+  "anomaly_enabled": true,
+  "novelty": {
+    "enabled": false,
+    "shadow": true,
+    "model_dir": "/models/novelty",
+    "window_s": 5,
+    "capacity": 100000,
+    "queue_capacity": 1000,
+    "work_budget": 1000,
+    "min_packets": 4,
+    "review_tail_fraction": 0.01,
+    "suspicious_tail_fraction": 0.001,
+    "persistence_windows": 2
+  },
+  "detectors": {
+    "ddos": {
+      "protocol_flood": {
+        "enabled": true,
+        "minimum_pps": 2500,
+        "absolute_pps": 25000,
+        "minimum_syn_pps": 100,
+        "absolute_syn_pps": 1000,
+        "sigma": 6,
+        "warmup_windows": 10,
+        "cooldown_s": 60,
+        "capacity": 4096
+      }
+    }
+  }
+}

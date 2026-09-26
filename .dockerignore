@@ -1,0 +1,16 @@
+.tools
+.runtime
+.secrets
+**/node_modules
+**/target
+**/__pycache__
+**/.pytest_cache
+data/alerts*
+data/training-runs
+data/captures
+data/lab-runs
+**/*.key
+**/*.log
+ui/dist
+ui-simple/dist
+graphify-out

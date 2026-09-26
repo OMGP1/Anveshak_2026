@@ -1,0 +1,25 @@
+{
+  "serving_artifacts_unchanged": true,
+  "tests": {
+    "tests": 429,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 13
+  },
+  "model_candidate": "data\\training-runs\\coverage-20260908-validated",
+  "candidate_promoted": false,
+  "comparison": "bench/model-improvement-20260908.json",
+  "benchmark": "bench/throughput-accuracy-final-20260908.json",
+  "qualification": "bench/qualification-accuracy-final-20260908.json",
+  "report": "docs\\ACCURACY_IMPROVEMENT_2026-09-08.md",
+  "anomaly_alert_parity": {
+    "alerts_before": 40,
+    "alerts_after": 40,
+    "all_detection_payloads_identical": true,
+    "excluded_fields": [
+      "x_latency_ms",
+      "x_prev_hash"
+    ],
+    "scope": "Identical complete capture replay before/after the exact anomaly-scoring optimization. Only latency and hash-chain fields excluded."
+  }
+}
